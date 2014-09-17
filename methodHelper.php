@@ -2,7 +2,7 @@
 
 include "/var/www/myr-insight-stats/Diggin/Phantomjs.php";
 
-$phantomjs = new Diggin/Phantomjs("/home/birdonwheels5/phantomjs/bin/phantomjs");
+$phantomjs = new Phantomjs("/home/birdonwheels5/phantomjs/bin/phantomjs");
 
 getDifficulty(qubit);
   
