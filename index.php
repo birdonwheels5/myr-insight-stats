@@ -8,7 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" title="Font Styles"/>
 	</head>
 	
-	<body>
+	<body style="background-color:#f4f4f4;float:left;width:50%">
 		<div class="container">
 			
 			<article>
@@ -42,7 +42,7 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 	    </tr>
 	    <tr>
 		<td>Difficulty:</td>
-		<td>712,122.80</td>
+		<td >712,122.80</td>
 		<td>30.02</td>
 		<td>1,480.12</td>
 		<td>450.91</td>
