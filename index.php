@@ -9,7 +9,7 @@
 	</head>
 	
 	<body style="background-color:#f4f4f4;float:left;width:30%">
-		<div class="container">
+		<div class="myContainer" style="width:40%;">
 			
 			<article>
 				<p>
