@@ -40,6 +40,7 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 		<td>Groestl</td>
 		<td>Qubit</td>
 	    </tr>
+	    <hr/>
 	    <tr>
 		<td>Difficulty:</td>
 		<td>712,122.80</td>
@@ -48,6 +49,7 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 		<td>450.91</td>
 		<td>48.76</td>
 	    </tr>
+	    <hr/>
 	    <tr>
 		<td>Network Hashrate:</td>
 		<td id="sha_net">N/A</td>
@@ -56,6 +58,7 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 		<td>N/A</td>
 		<td>N/A</td>
 	    </tr>
+	    <hr/>
 	    <tr>
 		<td>Profitability per Scrypt MH/s:</td>
 		<td>N/A</td>
@@ -64,6 +67,7 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 		<td>N/A</td>
 		<td>N/A</td>
 	    </tr>
+	    <hr/>
 	    <tr>
 		<td></td>
 		<td></td>
@@ -72,6 +76,7 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 		<td></td>
 		<td></td>
 	    </tr>
+	    <hr/>
 
 </p>
 
