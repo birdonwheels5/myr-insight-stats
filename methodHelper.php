@@ -1,6 +1,6 @@
 <?php
 
-require_once "Diggin/Phantomjs.php";
+include "Diggin/Phantomjs.php";
 
 $phantomjs = new Diggin\Phantomjs("/home/birdonwheels5/phantomjs/bin/phantomjs");
 
@@ -35,13 +35,7 @@ function getDifficulty($algorithm)
     {
       $port = 5567;
     }
-    
-    $ch = curl_init("http://birdonwheels5.no-ip.org:" . $port . "/static/stats");
-print $html;
 
-
-
-    
     // Get stream from the p2pool  node
 	  $url = ("http://birdonwheels5.no-ip.org:" . $port . "/static/stats");
 	  
