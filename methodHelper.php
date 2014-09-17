@@ -1,6 +1,6 @@
 <?php
 
-include "Diggin/Phantomjs.php";
+include "/var/www/myr-insight-stats/Diggin/Phantomjs.php";
 
 $phantomjs = new Diggin/Phantomjs("/home/birdonwheels5/phantomjs/bin/phantomjs");
 
