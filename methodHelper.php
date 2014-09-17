@@ -1,9 +1,5 @@
 <?php
 
-include "Diggin/Phantomjs.php";
-
-$phantomjs = new Phantomjs("/home/birdonwheels5/phantomjs/bin/phantomjs");
-
 getDifficulty("qubit");
   
 function getDifficulty($algorithm)
@@ -37,12 +33,11 @@ function getDifficulty($algorithm)
     }
 
     // Get stream from the p2pool  node
-	  $url = ("http://birdonwheels5.no-ip.org:" . $port . "/static/stats");
-	  
-	  $html = $phantomjs->getHtml($url);
-	  
-	  print $url . "\n";
-  
+	$url = ("http://birdonwheels5.no-ip.org:" . $port . "/static/stats");
+	
+	$cmd = "/home/birdonwheels5/phantomjs/bin/phantomjs /var/www/myr-insight-stats/scrape.js 2>&1";
+	exec($cmd, $url);
+	
   	// Create the array for storing the data
   	$explodedString = array();
   	
