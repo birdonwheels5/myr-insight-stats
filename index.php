@@ -6,24 +6,6 @@
 		<title>Portal Home</title>
 		<link rel="stylesheet" type="text/css" href="styles.css" title="Default Styles" media="screen"/>
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" title="Font Styles"/>
-		<style>
-		
-			body
-			{
-				background-color:#f4f4f4;
-			}
-			
-			td, th 
-			{
-			    border-bottom: 1px black;
-			}
-			
-			div.container
-			{
-				width:40%;
-			}
-			
-		</style>
 	</head>
 	
 	<body>
