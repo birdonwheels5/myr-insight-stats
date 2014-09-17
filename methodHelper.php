@@ -38,7 +38,7 @@ function getDifficulty($algorithm)
 	//$cmd = "/home/birdonwheels5/phantomjs/bin/phantomjs /var/www/myr-insight-stats/scrape.js 2>&1";
 	exec("phantomjs scrape.js " . $url);
 	
-	$fullString = stream_get_contents(file("scrape.html"));
+	$fullString = stream_get_contents(fopen("scrape.html"));
 	
   	// Create the array for storing the data
   	$explodedString = array();
