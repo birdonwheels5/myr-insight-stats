@@ -38,18 +38,17 @@ function getDifficulty($algorithm)
 	//$cmd = "/home/birdonwheels5/phantomjs/bin/phantomjs /var/www/myr-insight-stats/scrape.js 2>&1";
 	exec("phantomjs scrape.js " . $url);
 	
+	$fullString = file("scrape.html");
+	
   	// Create the array for storing the data
   	$explodedString = array();
-  	
-  	// Get the data from stream
-  	$fullString = stream_get_contents($url);
   	
   	print $fullString . "\n";
   	
   	$difficulty = "";
   	
   	// Break the data up into an array
-  	$explodedString = explode(">", $fullString);
+  	$explodedString = explode("block_difficulty", $fullString);
   	
   	var_dump($explodedString);
   	
