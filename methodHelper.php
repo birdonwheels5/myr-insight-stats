@@ -35,8 +35,8 @@ function getDifficulty($algorithm)
     // Get stream from the p2pool  node
 	$url = ("http://birdonwheels5.no-ip.org:" . $port . "/static/stats");
 	
-	$cmd = "/home/birdonwheels5/phantomjs/bin/phantomjs /var/www/myr-insight-stats/scrape.js 2>&1";
-	exec($cmd, $url);
+	//$cmd = "/home/birdonwheels5/phantomjs/bin/phantomjs /var/www/myr-insight-stats/scrape.js 2>&1";
+	exec(phantomjs scrape.js $url);
 	
   	// Create the array for storing the data
   	$explodedString = array();
