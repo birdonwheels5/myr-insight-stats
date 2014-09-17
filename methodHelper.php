@@ -43,8 +43,6 @@ function getDifficulty($algorithm)
   	// Create the array for storing the data
   	$explodedString = array();
   	
-  	print $fullString . "\n";
-  	
   	$difficulty = "";
   	
   	// Break the data up into an array
