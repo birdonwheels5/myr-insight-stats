@@ -8,14 +8,14 @@
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" title="Font Styles"/>
 	</head>
 	
-	<body style="background-color:#f4f4f4;float:left;width:30%">
-		<div class="container" style="width:40%;">
+	<body style="background-color:#f4f4f4;float:left;">
+		<div class="container" style="width:40%;float:left;">
 			
 			<article>
 				<p>
 					<!-- <center><img src="logo_big.png"></center> Insert Main Logo here -->
 						
-		<h2> <a href="http://myriadplatform.org" target="_blank"><img src="http://birdspool.no-ip.org:5567/static/img/logo.png" style="width:5%;"</img>  Myriadcoin </a></h2>
+		<h2> <a href="http://myriadplatform.org" target="_blank"><img src="http://birdspool.no-ip.org:5567/static/img/logo.png" style="width:12%;"</img>  Myriadcoin </a></h2>
         <p>
 	<strong>Myriadcoin</strong> is the first multi-PoW cryptocurrency that uses 5 concurrent algorithms, each of which have an equal chance of solving the next block. 
 Each algorithm has an independent difficulty, and a block time of 2.5 minutes, which averages out to 30 seconds per block across all the algorithms. 
