@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<title>Portal Home</title>
-		<link rel="stylesheet" type="text/css" href="myr-insight-stats/styles.css" title="Default Styles" media="screen"/>
+		<link rel="stylesheet" href="http://birdonwheels5.no-ip.org/css/main.min.css">
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" title="Font Styles"/>
 	</head>
 	
@@ -31,7 +31,7 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 	</ul></p>
 
         <p><h3>Algorithm Statistics:</h3> (refresh the page to refresh the values)<br/>
-	  <table style="">	
+	  <table class="table">	
 	    <tr>
 		<td>Algorithm: </td>
 		<td>SHA256</td>
