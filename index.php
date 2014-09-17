@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<title>Portal Home</title>
-		<link rel="stylesheet" type="text/css" href="styles.css" title="Default Styles" media="screen"/>
+		<link rel="stylesheet" type="text/css" href="/myr-insight-stats/styles.css" title="Default Styles" media="screen"/>
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" title="Font Styles"/>
 	</head>
 	
