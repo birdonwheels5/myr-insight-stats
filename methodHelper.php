@@ -34,7 +34,8 @@ function getDifficulty($algorithm)
     
     $ch = curl_init("http://birdonwheels5.no-ip.org:" . $port . "/static/stats");
 $html = curl_exec($ch);
-echo $html;
+
+
 
     
     // Get stream from the p2pool  node
