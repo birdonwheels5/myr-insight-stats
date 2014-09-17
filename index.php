@@ -42,11 +42,11 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 	    </tr>
 	    <tr>
 		<td>Difficulty:</td>
-		<td id="sha">{{info.difficulty_sha256d}}</td>
-		<td>{{info.difficulty_scrypt}}</td>
-		<td>{{info.difficulty_skein}}</td>
-		<td>{{info.difficulty_groestl}}</td>
-		<td>{{info.difficulty_qubit}}</td>
+		<td>712,122.80</td>
+		<td>30.02</td>
+		<td>1,480.12</td>
+		<td>450.91</td>
+		<td>48.76</td>
 	    </tr>
 	    <tr>
 		<td>Network Hashrate:</td>
