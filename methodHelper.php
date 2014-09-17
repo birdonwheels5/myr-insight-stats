@@ -53,14 +53,14 @@ function getDifficulty($algorithm)
   	var_dump($explodedString);
   	
   	// Clean it up (it wil always be the 21st position in the array)
-  	$difficulty = str_ireplace("Received: ", "", $explodedString[21]);
-  	$difficulty = str_ireplace("<br /", "", $difficulty);
-  	$difficulty = str_ireplace("MYR", "", $difficulty);
+  	//$difficulty = str_ireplace("Received: ", "", $explodedString[21]);
+  	//$difficulty = str_ireplace("<br /", "", $difficulty);
+  	//$difficulty = str_ireplace("MYR", "", $difficulty);
   	
-  	$difficulty = (double)$difficulty;
-  	$difficulty = number_format($difficulty, 2, '.', ',') . " MYR";
+  	//$difficulty = (double)$difficulty;
+  	//$difficulty = number_format($difficulty, 2, '.', ',') . " MYR";
 	  
-  	return $difficulty;
+  	//return $difficulty;
 }
   
 ?>
