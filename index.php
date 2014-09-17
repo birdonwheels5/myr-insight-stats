@@ -15,7 +15,7 @@
 				<p>
 					<!-- <center><img src="logo_big.png"></center> Insert Main Logo here -->
 						
-						<h2> <a href="http://myriadplatform.org" target="_blank"><img src="http://birdspool.no-ip.org:5567/static/img/logo.png" style="width:12%;"</img>  Myriadcoin </a></h2>
+		<h2> <a href="http://myriadplatform.org" target="_blank"><img src="http://birdspool.no-ip.org:5567/static/img/logo.png" style="width:3%;"</img>  Myriadcoin </a></h2>
         <p>
 	<strong>Myriadcoin</strong> is the first multi-PoW cryptocurrency that uses 5 concurrent algorithms, each of which have an equal chance of solving the next block. 
 Each algorithm has an independent difficulty, and a block time of 2.5 minutes, which averages out to 30 seconds per block across all the algorithms. 
