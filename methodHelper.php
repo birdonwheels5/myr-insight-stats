@@ -2,8 +2,8 @@
 
 getDifficulty(qubit);
   
-  getDifficulty($algorithm)
-  {
+function getDifficulty($algorithm)
+{
     $port = -1;
     
     // Determine the proper p2pool node based on which algorithm is supplied
@@ -59,6 +59,6 @@ getDifficulty(qubit);
   	$difficulty = number_format($difficulty, 2, '.', ',') . " MYR";
 	  
   	return $difficulty;
-  }
+}
   
 ?>
