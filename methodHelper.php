@@ -52,7 +52,7 @@ function getDifficulty($algorithm)
   	$difficulty = str_ireplace(" id=\"block_difficulty\">", "", $explodedString[21]);
   	$difficulty = str_ireplace("</", "", $difficulty);
 
-  	$difficulty = (double)$difficulty;
+  	//$difficulty = (double)$difficulty;
   	//$difficulty = number_format($difficulty, 2, '.', ',') . " MYR";
 	print $difficulty;
   	//return $difficulty;
