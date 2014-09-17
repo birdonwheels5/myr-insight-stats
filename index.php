@@ -9,7 +9,7 @@
 	</head>
 	
 	<body style="background-color:#f4f4f4;float:left;">
-		<div class="container" style="width:30%;float:left;">
+		<div class="container" style="width:100%;float:left;">
 			
 			<article>
 				<p>
