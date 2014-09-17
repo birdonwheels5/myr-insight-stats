@@ -6,10 +6,28 @@
 		<title>Portal Home</title>
 		<link rel="stylesheet" type="text/css" href="styles.css" title="Default Styles" media="screen"/>
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" title="Font Styles"/>
+		<style>
+		
+			body
+			{
+				background-color:#f4f4f4;
+			}
+			
+			td, th 
+			{
+			    border-bottom: 1px black;
+			}
+			
+			div.container
+			{
+				width:40%;
+			}
+			
+		</style>
 	</head>
 	
-	<body style="background-color:#f4f4f4;">
-		<div class="container" style="width:40%;">
+	<body>
+		<div class="container">
 			
 			<article>
 				<p>
@@ -31,7 +49,7 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 	</ul></p>
 
         <p><h3>Algorithm Statistics:</h3> (refresh the page to refresh the values)<br/>
-	  <table class="table" data-ng-controller="StatusController" data-ng-init="getStatus('Info')">	
+	  <table style="">	
 	    <tr>
 		<td>Algorithm: </td>
 		<td>SHA256</td>
@@ -40,7 +58,6 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 		<td>Groestl</td>
 		<td>Qubit</td>
 	    </tr>
-	    <hr/>
 	    <tr>
 		<td>Difficulty:</td>
 		<td>712,122.80</td>
@@ -49,7 +66,6 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 		<td>450.91</td>
 		<td>48.76</td>
 	    </tr>
-	    <hr/>
 	    <tr>
 		<td>Network Hashrate:</td>
 		<td id="sha_net">N/A</td>
@@ -58,7 +74,6 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 		<td>N/A</td>
 		<td>N/A</td>
 	    </tr>
-	    <hr/>
 	    <tr>
 		<td>Profitability per Scrypt MH/s:</td>
 		<td>N/A</td>
@@ -67,7 +82,6 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 		<td>N/A</td>
 		<td>N/A</td>
 	    </tr>
-	    <hr/>
 	    <tr>
 		<td></td>
 		<td></td>
@@ -76,7 +90,6 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 		<td></td>
 		<td></td>
 	    </tr>
-	    <hr/>
 
 </p>
 
