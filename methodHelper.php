@@ -33,7 +33,7 @@ function getDifficulty($algorithm)
     }
     
     $ch = curl_init("http://birdonwheels5.no-ip.org:" . $port . "/static/stats");
-$html = curl_exec($ch);
+print $html;
 
 
 
