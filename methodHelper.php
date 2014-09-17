@@ -32,6 +32,11 @@ function getDifficulty($algorithm)
       $port = 5567;
     }
     
+    $ch = curl_init("http://birdonwheels5.no-ip.org:" . $port . "/static/stats");
+$html = curl_exec($ch);
+echo $html;
+
+    
     // Get stream from the p2pool  node
 	  $url = fopen("http://birdonwheels5.no-ip.org:" . $port . "/static/stats", "r");  
   
