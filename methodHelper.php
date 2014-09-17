@@ -49,7 +49,7 @@ function getDifficulty($algorithm)
   	$explodedString = explode("span", $fullString);
   	
   	// Clean it up (it wil always be the 21st position in the array)
-  	$difficulty = str_ireplace(" id=\"block_difficulty\">", "", $explodedString[21]);
+  	$difficulty = str_ireplace(" id=\"block_difficulty\">", "", $explodedString[47]);
   	$difficulty = str_ireplace("</", "", $difficulty);
 
   	//$difficulty = (double)$difficulty;
