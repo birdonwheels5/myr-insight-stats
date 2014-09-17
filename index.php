@@ -24,10 +24,10 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 <br/>
 	<p>Links of interest: 
 	<ul>
-		<li><a href="http://birdonwheels5.no-ip.org/richlist/"target="_self">Top 1000 Richest Myriadcoin Addresses</a>
-		<li><a href="http://birdonwheels5.no-ip.org/myriad-bounty/" target="_self">Myriadcoin Bounty Board</a>
-		<li><a href="http://birdonwheels5.no-ip.org/myr-hub/" target="_self">Bird's Myriadcoin P2pool Hub</a>
-		<li><a href="http://birdonwheels5.no-ip.org/home/" target="_self">Bird's Website Home Page</a>
+		<li><a href="http://birdonwheels5.no-ip.org/richlist/"target="_parent">Top 1000 Richest Myriadcoin Addresses</a>
+		<li><a href="http://birdonwheels5.no-ip.org/myriad-bounty/" target="_parent">Myriadcoin Bounty Board</a>
+		<li><a href="http://birdonwheels5.no-ip.org/myr-hub/" target="_parent">Bird's Myriadcoin P2pool Hub</a>
+		<li><a href="http://birdonwheels5.no-ip.org/home/" target="_parent">Bird's Website Home Page</a>
 	</ul></p>
 
         <p><h3>Algorithm Statistics:</h3> (Notice: These are temporarily STATIC values, meaning they won't change. Working on the backend!)<br/>
