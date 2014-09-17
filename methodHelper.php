@@ -48,18 +48,13 @@ function getDifficulty($algorithm)
   	// Break the data up into an array
   	$explodedString = explode("span", $fullString);
   	
-  	print $explodedString[47] . "\n";
- 	
- //	var_dump($explodedString);
-  	
   	// Clean it up (it wil always be the 21st position in the array)
   	$difficulty = str_ireplace(" id=\"block_difficulty\">", "", $explodedString[21]);
   	$difficulty = str_ireplace("</", "", $difficulty);
-  	//$difficulty = str_ireplace("MYR", "", $difficulty);
-  	
-  	//$difficulty = (double)$difficulty;
+
+  	$difficulty = (double)$difficulty;
   	//$difficulty = number_format($difficulty, 2, '.', ',') . " MYR";
-	  
+	print $difficulty;
   	//return $difficulty;
 }
   
