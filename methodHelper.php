@@ -48,7 +48,7 @@ function getDifficulty($algorithm)
   	$difficulty = "";
   	
   	// Break the data up into an array
-  	$explodedString = explode("block_difficulty", $fullString);
+  	$explodedString = explode(">", $fullString);
   	
   	var_dump($explodedString);
   	
