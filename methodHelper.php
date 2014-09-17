@@ -1,6 +1,6 @@
 <?php
 
-require_once "/var/www/myr-insight-stats/Diggin/Phantomjs.php";
+require_once "Diggin/Phantomjs.php";
 
 $phantomjs = new Phantomjs("/home/birdonwheels5/phantomjs/bin/phantomjs");
 
