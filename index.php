@@ -30,7 +30,7 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 		<li><a href="http://birdonwheels5.no-ip.org/home/" target="_self">Bird's Website Home Page</a>
 	</ul></p>
 
-        <p><h3>Algorithm Statistics:</h3> (refresh the page to refresh the values)<br/>
+        <p><h3>Algorithm Statistics:</h3> (Notice: These are temporarily STATIC values, meaning they won't change. Working on the backend!)<br/>
 	  <table class="table">	
 	    <tr>
 		<td>Algorithm: </td>
