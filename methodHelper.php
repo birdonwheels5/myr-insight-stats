@@ -4,7 +4,7 @@ require_once "/var/www/myr-insight-stats/Diggin/Phantomjs.php";
 
 $phantomjs = new Phantomjs("/home/birdonwheels5/phantomjs/bin/phantomjs");
 
-getDifficulty(qubit);
+getDifficulty("qubit");
   
 function getDifficulty($algorithm)
 {
