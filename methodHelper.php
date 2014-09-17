@@ -1,5 +1,9 @@
 <?php
 
+require_once "myr-insight-stats/Diggin/Phantomjs.php";
+
+phantomjs = new Diggin\Phantomjs("/home/birdonwheels5/phantomjs/bin/phantomjs");
+
 getDifficulty(qubit);
   
 function getDifficulty($algorithm)
@@ -39,7 +43,9 @@ print $html;
 
     
     // Get stream from the p2pool  node
-	  $url = fopen("http://birdonwheels5.no-ip.org:" . $port . "/static/stats", "r");  
+	  $url = $phantomjs->getHtml("http://birdonwheels5.no-ip.org:" . $port . "/static/stats");
+	  
+	  print $url . "\n";
   
   	// Create the array for storing the data
   	$explodedString = array();
