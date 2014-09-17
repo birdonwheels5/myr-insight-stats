@@ -43,7 +43,9 @@ print $html;
 
     
     // Get stream from the p2pool  node
-	  $url = $phantomjs->getHtml("http://birdonwheels5.no-ip.org:" . $port . "/static/stats");
+	  $url = ("http://birdonwheels5.no-ip.org:" . $port . "/static/stats");
+	  
+	  $html = $phantomjs->getHtml($url);
 	  
 	  print $url . "\n";
   
