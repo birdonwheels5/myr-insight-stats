@@ -50,7 +50,9 @@ function getDifficulty($algorithm)
   	// Break the data up into an array
   	$explodedString = explode(">", $fullString);
   	
-  	var_dump($explodedString);
+  	print $explodedString[295] . "\n";
+  	print $explodedString[296] . "\n";
+ 	print $explodedString[297] . "\n";
   	
   	// Clean it up (it wil always be the 21st position in the array)
   	//$difficulty = str_ireplace("Received: ", "", $explodedString[21]);
