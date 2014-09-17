@@ -1,0 +1,14 @@
+body
+{
+	background-color:#f4f4f4;
+}
+
+td, th 
+{
+  border-bottom: 1px black;
+}
+
+div.container
+{
+	width:40%;
+}
