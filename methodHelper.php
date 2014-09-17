@@ -2,7 +2,7 @@
 
 require_once "myr-insight-stats/Diggin/Phantomjs.php";
 
-phantomjs = new Diggin\Phantomjs("/home/birdonwheels5/phantomjs/bin/phantomjs");
+$phantomjs = new Diggin\Phantomjs("/home/birdonwheels5/phantomjs/bin/phantomjs");
 
 getDifficulty(qubit);
   
