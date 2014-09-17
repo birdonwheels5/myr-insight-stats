@@ -8,7 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" title="Font Styles"/>
 	</head>
 	
-	<body style="background-color:#f4f4f4;float:left;width:50%">
+	<body style="background-color:#f4f4f4;float:left;width:30%">
 		<div class="container">
 			
 			<article>
