@@ -12,25 +12,24 @@
 	<body style="background-color:#f4f4f4;float:left;">
 	
 	<?php
-		/*$sha = getDifficulty("sha256d");
-		$sha_diff = number_format($sha, 2, '.', ',');
+		
+		$diff = array();
+		$diff = getDifficulties();
+		
+		$sha_diff = number_format($diff[0], 2, '.', ',');
 		//$sha_hashrate = $sha
 		
-		$scrypt = getDifficulty("scrypt");
-		$scrypt_diff = number_format($scrypt, 2, '.', ',');
+		$scrypt_diff = number_format($diff[1], 2, '.', ',');
 		//$scrypt_hashrate = $scrypt
 		
-		$skein = getDifficulty("skein");
-		$skein_diff = number_format($skein, 2, '.', ',');
+		$skein_diff = number_format($diff[2], 2, '.', ',');
 		//$skein_hashrate = $skein
 		
-		$groestl = getDifficulty("groestl");
-		$groestl_diff = number_format($groestl, 2, '.', ',');
+		$groestl_diff = number_format($diff[3], 2, '.', ',');
 		//$groestl_hashrate = $groestl
 		
-		$qubit = getDifficulty("qubit");
-		$qubit_diff = number_format($qubit, 2, '.', ',');
-		//$qubit_hashrate = $qubit */
+		$qubit_diff = number_format($diff[4], 2, '.', ',');
+		//$qubit_hashrate = $qubit
 	?>
 	
 		<div class="container" style="width:100%;float:left;">
