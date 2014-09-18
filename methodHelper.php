@@ -1,6 +1,6 @@
 <?php
   
-function getDifficulty()
+function getDifficulties()
 {
 	
 	$url = ("http://birdonwheels5.no-ip.org:3000/status");
