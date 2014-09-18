@@ -2,7 +2,7 @@
   
   getDifficulty();
   
-function getDifficulty($algorithm)
+function getDifficulty()
 {
 	
 	$url = ("http://birdonwheels5.no-ip.org:3000/status");
@@ -44,9 +44,14 @@ function getDifficulty($algorithm)
  	$difficulties = array(4);
  	
  	$difficulties[0] = $sha;
+  	$difficulties[1] = $scrypt;
+ 	$difficulties[2] = $skein;
+ 	$difficulties[3] = $groestl;
+ 	$difficulties[4] = $qubit;
+
  	
- 	//print $difficulty;
-  	//return $difficulty;
+ 	var_dump($difficulties);
+  	return $difficulties;
 }
   
 ?>
