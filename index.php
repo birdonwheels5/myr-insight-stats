@@ -17,16 +17,16 @@
 		$diff = getDifficulties();
 		
 		$sha_diff = number_format($diff[0], 2, '.', ',');
-		$sha_hashrate = $diff[0]/34.92331;
+		$sha_hashrate = $diff[0]/34.92331797;
 		
 		$scrypt_diff = number_format($diff[1], 2, '.', ',');
-		$scrypt_hashrate = $diff[1]/34.92331;
+		$scrypt_hashrate = $diff[1]/34.92331797;
 		
 		$skein_diff = number_format($diff[2], 2, '.', ',');
-		$skein_hashrate = $diff[2]/34.92331;
+		$skein_hashrate = $diff[2]/34.92331797;
 		
 		$groestl_diff = number_format($diff[3], 2, '.', ',');
-		$groestl_hashrate = $diff[3]/34.92331
+		$groestl_hashrate = $diff[3]/34.92331797;
 		
 		$qubit_diff = number_format($diff[4], 2, '.', ',');
 		$qubit_hashrate = $qubit
