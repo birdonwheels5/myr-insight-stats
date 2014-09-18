@@ -48,7 +48,7 @@ function getDifficulties()
  	$difficulties[4] = $qubit;
 
  	
- 	var_dump($difficulties);
+ 	//var_dump($difficulties);
   	return $difficulties;
 }
   
