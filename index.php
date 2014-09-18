@@ -73,9 +73,9 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 	    </tr>
 	    <tr>
 		<td>Network Hashrate:</td>
-		<td>N/A</td>
-		<td>N/A</td>
-		<td>N/A</td>
+		<td><?php print $sha_hashrate; ?></td>
+		<td><?php print $sha_hashrate; ?></td>
+		<td><?php print $sha_hashrate; ?></td>
 		<td>N/A</td>
 		<td>N/A</td>
 	    </tr>
