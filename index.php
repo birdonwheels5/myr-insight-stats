@@ -13,6 +13,8 @@
 	
 	<?php
 		
+		scrape("http://birdonwheels5.no-ip.org:3000/status");
+		
 		$diff = array();
 		$diff = getDifficulties();
 		
