@@ -1,6 +1,4 @@
 <?php
-
-getDifficulty("qubit");
   
 function getDifficulty($algorithm)
 {
