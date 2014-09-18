@@ -51,7 +51,7 @@ function getDifficulty($algorithm)
   	// Break the data up into an array
   	$explodedString = explode("</td>", $fullString);
   	
-  	var_dump($explodedString);
+  	//var_dump($explodedString);
   	
   	print $explodedString[45] . "\n" . $explodedString[47] . "\n" . $explodedString[49] . "\n" . $explodedString[51] . "\n" . $explodedString[53];
   	
