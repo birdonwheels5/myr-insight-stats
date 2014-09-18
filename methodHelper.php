@@ -1,7 +1,5 @@
 <?php
   
-  getDifficulty();
-  
 function getDifficulty()
 {
 	
