@@ -17,13 +17,13 @@
 		$diff = getDifficulties();
 		
 		$sha_diff = number_format($diff[0], 2, '.', ',');
-		//$sha_hashrate = $sha
+		$sha_hashrate = $diff[0]/34.92331
 		
 		$scrypt_diff = number_format($diff[1], 2, '.', ',');
-		//$scrypt_hashrate = $scrypt
+		$scrypt_hashrate = $scrypt
 		
 		$skein_diff = number_format($diff[2], 2, '.', ',');
-		//$skein_hashrate = $skein
+		$skein_hashrate = $skein
 		
 		$groestl_diff = number_format($diff[3], 2, '.', ',');
 		//$groestl_hashrate = $groestl
