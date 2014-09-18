@@ -29,7 +29,7 @@
 		$groestl_hashrate = $diff[3]/34.92331797;
 		
 		$qubit_diff = number_format($diff[4], 2, '.', ',');
-		$qubit_hashrate = $qubit
+		$qubit_hashrate = $diff[4]/34.92331797;
 	?>
 	
 		<div class="container" style="width:100%;float:left;">
