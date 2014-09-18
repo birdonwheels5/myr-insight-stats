@@ -66,11 +66,11 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 	    </tr>
 	    <tr>
 		<td>Difficulty:</td>
-		<td ><?php print $sha_diff; ?></td>
-		<td><?php print $scrypt_diff; ?></td>
-		<td><?php print $skein_diff; ?></td>
-		<td><?php print $groestl_diff; ?></td>
-		<td><?php print $qubit_diff; ?></td>
+		<td ><?php //print $sha_diff; ?></td>
+		<td><?php //print $scrypt_diff; ?></td>
+		<td><?php //print $skein_diff; ?></td>
+		<td><?php //print $groestl_diff; ?></td>
+		<td><?php //print $qubit_diff; ?></td>
 	    </tr>
 	    <tr>
 		<td>Network Hashrate:</td>
