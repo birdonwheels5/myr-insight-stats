@@ -36,13 +36,16 @@ function getDifficulty($algorithm)
   	$qubit = trim(str_ireplace("<td class=\"text-right ng-binding\">", "", $explodedString[53]));
 
   	$sha = (double)$sha;
-  	
-  	print $sha . "\n";
-  	print $groestl;
-  	
-  	
-  	
-	//print $difficulty;
+  	$scrypt = (double)$scrypt;
+  	$skein = (double)$skein;
+  	$groestl = (double)$groestl;
+  	$qubit = (double)$qubit;
+ 
+ 	$difficulties = array(4);
+ 	
+ 	$difficulties[0] = $sha;
+ 	
+ 	//print $difficulty;
   	//return $difficulty;
 }
   
