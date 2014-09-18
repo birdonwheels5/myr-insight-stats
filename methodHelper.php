@@ -5,9 +5,6 @@ function getDifficulties()
 	
 	$url = ("http://birdonwheels5.no-ip.org:3000/status");
 	
-	// Generate rendered Javascript for scraping difficulty values
-	exec("phantomjs scrape.js " . $url);
-	
 	$fullString = stream_get_contents(fopen("scrape.html", "r"));
 	
   	// Create the array for storing the data
@@ -50,6 +47,12 @@ function getDifficulties()
  	
  	//var_dump($difficulties);
   	return $difficulties;
+}
+
+// Generate rendered Javascript for scraping difficulty values
+function scrape($url)
+{
+	exec("phantomjs scrape.js " . $url);
 }
   
 ?>
