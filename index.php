@@ -53,7 +53,7 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 		<li><a href="http://birdonwheels5.no-ip.org/home/" target="_parent">Bird's Website Home Page</a>
 	</ul></p>
 
-        <p><h3>Algorithm Statistics:</h3> (Notice: These are temporarily STATIC values, meaning they won't change. Working on the backend!)<br/>
+        <p><h3>Algorithm Statistics:</h3> (Refresh page to refresh values)<br/>
 	  <table class="table">	
 	    <tr>
 		<td>Algorithm: </td>
