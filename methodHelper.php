@@ -29,11 +29,11 @@ function getDifficulty($algorithm)
   	//print $explodedString[45] . "\n" . $explodedString[47] . "\n" . $explodedString[49] . "\n" . $explodedString[51] . "\n" . $explodedString[53];
   	
   	// Clean it up (it will always be the 47th position in the array)
-  	$sha = trim(str_ireplace("td class=\"text-right ng-binding\">", "", $explodedString[45]));
-  	$scrypt = trim(str_ireplace("td class=\"text-right ng-binding\">", "", $explodedString[47]));
-  	$skein = trim(str_ireplace("td class=\"text-right ng-binding\">", "", $explodedString[49]));
-  	$groestl = trim(str_ireplace("td class=\"text-right ng-binding\">", "", $explodedString[51]));
-  	$qubit = trim(str_ireplace("td class=\"text-right ng-binding\">", "", $explodedString[53]));
+  	$sha = trim(str_ireplace("<td class=\"text-right ng-binding\">", "", $explodedString[45]));
+  	$scrypt = trim(str_ireplace("<td class=\"text-right ng-binding\">", "", $explodedString[47]));
+  	$skein = trim(str_ireplace("<td class=\"text-right ng-binding\">", "", $explodedString[49]));
+  	$groestl = trim(str_ireplace("<td class=\"text-right ng-binding\">", "", $explodedString[51]));
+  	$qubit = trim(str_ireplace("<td class=\"text-right ng-binding\">", "", $explodedString[53]));
 
   	$sha = (double)$sha;
   	
