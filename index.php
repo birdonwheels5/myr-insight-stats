@@ -13,7 +13,7 @@
 	
 	<?php
 		
-		scrape("http://birdonwheels5.no-ip.org:3000/status");
+		scrape("http://birdonwheels5.no-ip.org:3000/status", "scrape.html");
 		
 		$diff = array();
 		$diff = getDifficulties("scrape.html");
