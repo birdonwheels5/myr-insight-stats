@@ -49,9 +49,9 @@ function getDifficulty($algorithm)
   	$difficulty = "";
   	
   	// Break the data up into an array
-  	$explodedString = explode("<td> class=\"text-right ng-binding\">", $fullString);
+  	$explodedString = explode("ng-binding\">", $fullString);
   	
-  	var_dump($explodedString);
+  	//var_dump($explodedString);
   	
   	print $explodedString[27] . "\n" . $explodedString[28] . "\n" . $explodedString[29] . "\n" . $explodedString[30] . "\n" . $explodedString[31];
   	
