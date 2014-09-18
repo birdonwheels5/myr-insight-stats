@@ -7,27 +7,28 @@ function getDifficulty($algorithm)
     $port = 0;
     
     // Determine the proper p2pool node based on which algorithm is supplied
-    if(strcmp($algorithm, "sha256d") == 0)
+    
+    if(strcmp(stristr($algorithm, "sha256d"), $algorithm) == 0)
     {
       $port = 5578;
     }
     
-    if(strcmp($algorithm, "scrypt") == 0)
+    if(strcmp(stristr($algorithm, "scrypt"), $algorithm) == 0)
     {
       $port = 5556;
     }
     
-    if(strcmp($algorithm, "groestl") == 0)
+    if(strcmp(stristr($algorithm, "groestl"), $algorithm) == 0)
     {
       $port = 3333;
     }
     
-    if(strcmp($algorithm, "skein") == 0)
+    if(strcmp(stristr($algorithm, "skein"), $algorithm) == 0)
     {
       $port = 5589;
     }
     
-    if(strcmp($algorithm, "qubit") == 0)
+    if(strcmp(stristr($algorithm, "qubit"), $algorithm) == 0)
     {
       $port = 5567;
     }
