@@ -44,7 +44,7 @@ function getDifficulties($fileName)
 // Generate rendered Javascript for scraping difficulty values
 function scrape($url, $fileName)
 {
-	exec("phantomjs scrape.js" . $url . $fileName);
+	exec("phantomjs scrape.js " . $url . " " .  $fileName);
 }
   
 ?>
