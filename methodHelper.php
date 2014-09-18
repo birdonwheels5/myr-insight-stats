@@ -1,5 +1,7 @@
 <?php
   
+  getDifficulty("scrypt");
+  
 function getDifficulty($algorithm)
 {
     $port = 0;
