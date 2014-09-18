@@ -16,7 +16,7 @@
 		scrape("http://birdonwheels5.no-ip.org:3000/status");
 		
 		$diff = array();
-		$diff = getDifficulties();
+		$diff = getDifficulties("scrape.html");
 		
 		$sha_diff = number_format($diff[0], 2, '.', ',');
 		$sha_hashrate = number_format(($diff[0]/34.92331797)/1000, 2, '.', ',');
