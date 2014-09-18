@@ -95,6 +95,7 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 		<td></td>
 		<td></td>
 	    </tr>
+	</table>
 
 </p>
 
