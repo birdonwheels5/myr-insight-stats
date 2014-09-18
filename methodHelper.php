@@ -41,7 +41,7 @@ function getDifficulty()
   	$groestl = (double)$groestl;
   	$qubit = (double)$qubit;
  
- 	$difficulties = array(4);
+ 	$difficulties = array();
  	
  	$difficulties[0] = $sha;
   	$difficulties[1] = $scrypt;
