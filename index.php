@@ -64,7 +64,7 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 		<td>Qubit</td>
 	    </tr>
 	    <tr>
-		<td>Difficulty:</td>
+		<td>Current Difficulty:</td>
 		<td ><?php print $sha_diff; ?></td>
 		<td><?php print $scrypt_diff; ?></td>
 		<td><?php print $skein_diff; ?></td>
