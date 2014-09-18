@@ -6,9 +6,33 @@
 		<title>Wat?</title>
 		<link rel="stylesheet" href="http://birdonwheels5.no-ip.org/css/main.min.css">
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" title="Font Styles"/>
+		<?php include "methodHelper.php"; ?>
 	</head>
 	
 	<body style="background-color:#f4f4f4;float:left;">
+	
+	<?php
+		$sha = getDifficulty("sha256d");
+		$sha_diff = number_format($sha, 2, '.', ',');
+		//$sha_hashrate = $sha
+		
+		$scrypt = getDifficulty("scrypt");
+		$scrypt_diff = number_format($scrypt, 2, '.', ',');
+		//$scrypt_hashrate = $scrypt
+		
+		$skein = getDifficulty("skein");
+		$skein_diff = number_format($skein, 2, '.', ',');
+		//$skein_hashrate = $skein
+		
+		$groestl = getDifficulty("groestl");
+		$groestl_diff = number_format($groestl, 2, '.', ',');
+		//$groestl_hashrate = $groestl
+		
+		$qubit = getDifficulty("qubit");
+		$qubit_diff = number_format($qubit, 2, '.', ',');
+		//$qubit_hashrate = $qubit
+	?>
+	
 		<div class="container" style="width:100%;float:left;">
 			
 			<article>
@@ -42,15 +66,15 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 	    </tr>
 	    <tr>
 		<td>Difficulty:</td>
-		<td >712,122.80</td>
-		<td>30.02</td>
-		<td>1,480.12</td>
-		<td>450.91</td>
-		<td>48.76</td>
+		<td ><?php print $sha_diff; ?></td>
+		<td><?php print $scrypt_diff; ?></td>
+		<td><?php print $skein_diff; ?></td>
+		<td><?php print $groestl_diff; ?></td>
+		<td><?php print $qubit_diff; ?></td>
 	    </tr>
 	    <tr>
 		<td>Network Hashrate:</td>
-		<td id="sha_net">N/A</td>
+		<td>N/A</td>
 		<td>N/A</td>
 		<td>N/A</td>
 		<td>N/A</td>
