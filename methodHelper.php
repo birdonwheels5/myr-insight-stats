@@ -4,30 +4,30 @@ getDifficulty("qubit");
   
 function getDifficulty($algorithm)
 {
-    $port = -1;
+    $port = 0;
     
     // Determine the proper p2pool node based on which algorithm is supplied
-    if(strcmp($algorithm, "sha256d"))
+    if(strcmp($algorithm, "sha256d") == 0)
     {
       $port = 5578;
     }
     
-    if(strcmp($algorithm, "scrypt"))
+    if(strcmp($algorithm, "scrypt") == 0)
     {
       $port = 5556;
     }
     
-    if(strcmp($algorithm, "groestl"))
+    if(strcmp($algorithm, "groestl") == 0)
     {
       $port = 3333;
     }
     
-    if(strcmp($algorithm, "skein"))
+    if(strcmp($algorithm, "skein") == 0)
     {
       $port = 5589;
     }
     
-    if(strcmp($algorithm, "qubit"))
+    if(strcmp($algorithm, "qubit") == 0)
     {
       $port = 5567;
     }
@@ -48,14 +48,13 @@ function getDifficulty($algorithm)
   	// Break the data up into an array
   	$explodedString = explode("span", $fullString);
   	
-  	// Clean it up (it wil always be the 21st position in the array)
+  	// Clean it up (it will always be the 47th position in the array)
   	$difficulty = str_ireplace(" id=\"block_difficulty\">", "", $explodedString[47]);
   	$difficulty = str_ireplace("</", "", $difficulty);
 
   	$difficulty = (double)$difficulty;
-  	//$difficulty = number_format($difficulty, 2, '.', ',') . " MYR";
 	print $difficulty;
-  	//return $difficulty;
+  	return $difficulty;
 }
   
 ?>
