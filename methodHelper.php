@@ -1,9 +1,9 @@
 <?php
   
-function getDifficulties()
+function getDifficulties($fileName)
 {
 	
-	$fullString = stream_get_contents(fopen("scrape.html", "r"));
+	$fullString = stream_get_contents(fopen($fileName, "r"));
 	
   	// Create the array for storing the data
   	$explodedString = array();
