@@ -36,7 +36,7 @@ function getDifficulty($algorithm)
     // Get stream from the p2pool  node
 	//$url = ("http://birdonwheels5.no-ip.org:" . $port . "/static/stats");
 	
-	$url = ("http://birdonwheels5.no-ip.org/status");
+	$url = ("http://birdonwheels5.no-ip.org:3000/status");
 	
 	//$cmd = "/home/birdonwheels5/phantomjs/bin/phantomjs /var/www/myr-insight-stats/scrape.js 2>&1";
 	exec("phantomjs scrape.js " . $url);
@@ -46,18 +46,20 @@ function getDifficulty($algorithm)
   	// Create the array for storing the data
   	$explodedString = array();
   	
-  	/*$difficulty = "";
+  	$difficulty = "";
   	
   	// Break the data up into an array
-  	$explodedString = explode("span", $fullString);
+  	$explodedString = explode("ng-binding\">", $fullString);
+  	
+  	var_dump($explodedString);
   	
   	// Clean it up (it will always be the 47th position in the array)
-  	$difficulty = str_ireplace(" id=\"block_difficulty\">", "", $explodedString[47]);
-  	$difficulty = str_ireplace("</", "", $difficulty);
+  	//$difficulty = str_ireplace(" id=\"block_difficulty\">", "", $explodedString[47]);
+  	//$difficulty = str_ireplace("</", "", $difficulty);
 
   	$difficulty = (double)$difficulty;
 	print $difficulty;
-  	return $difficulty;*/
+  	return $difficulty;
 }
   
 ?>
