@@ -1,44 +1,13 @@
 <?php
   
-  getDifficulty("scrypt");
+  getDifficulty();
   
 function getDifficulty($algorithm)
 {
-    $port = 0;
-    
-    // Determine the proper p2pool node based on which algorithm is supplied
-    
-    if(strcmp(stristr($algorithm, "sha256d"), $algorithm) == 0)
-    {
-      $port = 5578;
-    }
-    
-    if(strcmp(stristr($algorithm, "scrypt"), $algorithm) == 0)
-    {
-      $port = 5556;
-    }
-    
-    if(strcmp(stristr($algorithm, "groestl"), $algorithm) == 0)
-    {
-      $port = 3333;
-    }
-    
-    if(strcmp(stristr($algorithm, "skein"), $algorithm) == 0)
-    {
-      $port = 5589;
-    }
-    
-    if(strcmp(stristr($algorithm, "qubit"), $algorithm) == 0)
-    {
-      $port = 5567;
-    }
-
-    // Get stream from the p2pool  node
-	//$url = ("http://birdonwheels5.no-ip.org:" . $port . "/static/stats");
 	
 	$url = ("http://birdonwheels5.no-ip.org:3000/status");
 	
-	//$cmd = "/home/birdonwheels5/phantomjs/bin/phantomjs /var/www/myr-insight-stats/scrape.js 2>&1";
+	// Generate rendered Javascript for scraping difficulty values
 	exec("phantomjs scrape.js " . $url);
 	
 	$fullString = stream_get_contents(fopen("scrape.html", "r"));
@@ -57,7 +26,7 @@ function getDifficulty($algorithm)
   	
   	//var_dump($explodedString);
   	
-  	print $explodedString[45] . "\n" . $explodedString[47] . "\n" . $explodedString[49] . "\n" . $explodedString[51] . "\n" . $explodedString[53];
+  	//print $explodedString[45] . "\n" . $explodedString[47] . "\n" . $explodedString[49] . "\n" . $explodedString[51] . "\n" . $explodedString[53];
   	
   	// Clean it up (it will always be the 47th position in the array)
   	$sha = trim(str_ireplace("td class=\"text-right ng-binding\">", "", $explodedString[45]));
@@ -66,7 +35,13 @@ function getDifficulty($algorithm)
   	$groestl = trim(str_ireplace("td class=\"text-right ng-binding\">", "", $explodedString[51]));
   	$qubit = trim(str_ireplace("td class=\"text-right ng-binding\">", "", $explodedString[53]));
 
-  	//$difficulty = (double)$difficulty;
+  	$sha = (double)$sha;
+  	
+  	print $sha . "\n";
+  	print $groestl;
+  	
+  	
+  	
 	//print $difficulty;
   	//return $difficulty;
 }
