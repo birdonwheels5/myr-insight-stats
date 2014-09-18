@@ -27,20 +27,14 @@ function getDifficulties($fileName)
   	$skein = trim(str_ireplace("<td class=\"text-right ng-binding\">", "", $explodedString[49]));
   	$groestl = trim(str_ireplace("<td class=\"text-right ng-binding\">", "", $explodedString[51]));
   	$qubit = trim(str_ireplace("<td class=\"text-right ng-binding\">", "", $explodedString[53]));
-
-  	$sha = (double)$sha;
-  	$scrypt = (double)$scrypt;
-  	$skein = (double)$skein;
-  	$groestl = (double)$groestl;
-  	$qubit = (double)$qubit;
  
  	$difficulties = array();
  	
- 	$difficulties[0] = $sha;
-  	$difficulties[1] = $scrypt;
- 	$difficulties[2] = $skein;
- 	$difficulties[3] = $groestl;
- 	$difficulties[4] = $qubit;
+ 	$difficulties[0] = (double)$sha;
+  	$difficulties[1] = (double)$scrypt;
+ 	$difficulties[2] = (double)$skein;
+ 	$difficulties[3] = (double)$groestl;
+ 	$difficulties[4] = (double)$qubit;
 
  	
  	//var_dump($difficulties);
