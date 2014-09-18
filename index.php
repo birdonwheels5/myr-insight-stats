@@ -75,11 +75,11 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 	    </tr>
 	    <tr>
 		<td>Network Hashrate:</td>
-		<td><?php print $sha_hashrate; ?> &nbsp &nbsp &nbsp TH/S</td>
-		<td><?php print $scrypt_hashrate; ?> &nbsp GH/s</td>
-		<td><?php print $skein_hashrate; ?> &nbsp GH/s</td>
-		<td><?php print $groestl_hashrate; ?> &nbsp GH/s</td>
-		<td><?php print $qubit_hashrate; ?> &nbsp &nbsp GH/s</td>
+		<td><?php print $sha_hashrate; ?><br/> TH/S</td>
+		<td><?php print $scrypt_hashrate; ?><br/> GH/s</td>
+		<td><?php print $skein_hashrate; ?><br/> GH/s</td>
+		<td><?php print $groestl_hashrate; ?><br/> GH/s</td>
+		<td><?php print $qubit_hashrate; ?><br/> &nbsp GH/s</td>
 	    </tr>
 	    <tr>
 		<td>Profitability per Scrypt MH/s:</td>
