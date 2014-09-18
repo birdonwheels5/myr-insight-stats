@@ -12,7 +12,7 @@
 	<body style="background-color:#f4f4f4;float:left;">
 	
 	<?php
-		$sha = getDifficulty("sha256d");
+		/*$sha = getDifficulty("sha256d");
 		$sha_diff = number_format($sha, 2, '.', ',');
 		//$sha_hashrate = $sha
 		
@@ -30,7 +30,7 @@
 		
 		$qubit = getDifficulty("qubit");
 		$qubit_diff = number_format($qubit, 2, '.', ',');
-		//$qubit_hashrate = $qubit
+		//$qubit_hashrate = $qubit */
 	?>
 	
 		<div class="container" style="width:100%;float:left;">
