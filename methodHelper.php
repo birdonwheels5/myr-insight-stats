@@ -3,8 +3,6 @@
 function getDifficulties()
 {
 	
-	$url = ("http://birdonwheels5.no-ip.org:3000/status");
-	
 	$fullString = stream_get_contents(fopen("scrape.html", "r"));
 	
   	// Create the array for storing the data
