@@ -59,7 +59,7 @@
 						
 		<h2> <a href="http://myriadplatform.org" target="_blank"><img src="http://birdspool.no-ip.org:5567/static/img/logo.png" style="width:12%;"</img>  Myriadcoin </a></h2>
         <p>
-	<strong>Myriadcoin</strong> is the first multi-PoW cryptocurrency that uses 5 concurrent algorithms, each of which have an equal chance of solving the next block. 
+	<strong>Myriadcoin</strong> is the first multi-PoW cryptocurrency that uses 5 concurrent hashing algorithms, each of which have an equal chance of solving the next block. 
 Each algorithm has an independent difficulty, and a block time of 2.5 minutes, which averages out to 30 seconds per block across all the algorithms. 
 The 5 algorithms that comprise Myriadcoin are SHA256, Scrypt, Groestl, Skein, and Qubit. 
 For more information, visit <a href="http://myriadplatform.org" target="_blank">MyriadPlatform.org</a></p>
@@ -92,19 +92,19 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 	    </tr>
 	    <tr>
 		<td>Network Hashrate:</td>
-		<td><?php print $sha_hashrate; ?><br/> TH/S</td>
-		<td><?php print $scrypt_hashrate; ?><br/> GH/s</td>
-		<td><?php print $skein_hashrate; ?><br/> GH/s</td>
-		<td><?php print $groestl_hashrate; ?><br/> GH/s</td>
-		<td><?php print $qubit_hashrate; ?><br/> &nbsp GH/s</td>
+		<td><?php print $sha_hashrate; ?><br/>TH/S</td>
+		<td><?php print $scrypt_hashrate; ?><br/>GH/s</td>
+		<td><?php print $skein_hashrate; ?><br/>GH/s</td>
+		<td><?php print $groestl_hashrate; ?><br/>GH/s</td>
+		<td><?php print $qubit_hashrate; ?><br/>GH/s</td>
 	    </tr>
 	    <tr>
-		<td>Profitability per Scrypt MH/s:</td>
-		<td>N/A</td>
-		<td>N/A</td>
-		<td>N/A</td>
-		<td>N/A</td>
-		<td>N/A</td>
+		<td>Profitability/Day:</td>
+		<td><?php print $sha_profit; ?><br/>per GH/s</td>
+		<td><?php print $scrypt_profit; ?><br/>per Scrypt MH/s</td>
+		<td><?php print $skein_profit; ?><br/>per Scrypt MH/s</td>
+		<td><?php print $groestl_profit; ?><br/>per Scrypt MH/s</td>
+		<td><?php print $qubit_profit; ?><br/>per Scrypt MH/s</td>
 	    </tr>
 	    <tr>
 		<td></td>
