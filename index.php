@@ -17,9 +17,9 @@
 		// Measured in MH/s and are estimates of 1 Scrypt MH/s
 		$sha_hash = 1000;
 		$scrypt_hash = 1;
-		$skein_hash = 325;
-		$groestl_hash = 18;
-		$qubit_hash = 8;
+		$skein_hash = 280;
+		$groestl_hash = 15;
+		$qubit_hash = 7;
 		
 		$hash_multiplier = 1000000;
 		$coins_per_block = 1000;
@@ -61,7 +61,7 @@
         <p>
 	<strong>Myriadcoin</strong> is the first multi-PoW cryptocurrency that uses 5 concurrent hashing algorithms, each of which have an equal chance of solving the next block. 
 Each algorithm has an independent difficulty, and a block time of 2.5 minutes, which averages out to 30 seconds per block across all the algorithms. 
-The 5 algorithms that comprise Myriadcoin are SHA256, Scrypt, Groestl, Skein, and Qubit. 
+The 5 algorithms that comprise Myriadcoin are Sha256, Scrypt, Groestl, Skein, and Qubit. 
 For more information, visit <a href="http://myriadplatform.org" target="_blank">MyriadPlatform.org</a></p>
 <br/>
 	<p>Links of interest: 
@@ -83,7 +83,7 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 		<td><b>Qubit</b></td>
 	    </tr>
 	    <tr>
-		<td>Current Difficulty:</td>
+		<th>Current Difficulty:</th>
 		<td ><?php print $sha_diff; ?></td>
 		<td><?php print $scrypt_diff; ?></td>
 		<td><?php print $skein_diff; ?></td>
@@ -91,7 +91,7 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 		<td><?php print $qubit_diff; ?></td>
 	    </tr>
 	    <tr>
-		<td>Network Hashrate:</td>
+		<th>Network Hashrate:</th>
 		<td><?php print $sha_hashrate; ?><br/>TH/S</td>
 		<td><?php print $scrypt_hashrate; ?><br/>GH/s</td>
 		<td><?php print $skein_hashrate; ?><br/>GH/s</td>
@@ -99,7 +99,7 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 		<td><?php print $qubit_hashrate; ?><br/>GH/s</td>
 	    </tr>
 	    <tr>
-		<td>Profitability/Day:</td>
+		<th>Profitability/Day:</th>
 		<td><?php print $sha_profit; ?> MYR/GH/s</td>
 		<td><?php print $scrypt_profit; ?> MYR/Scrypt MH/s</td>
 		<td><?php print $skein_profit; ?> MYR/Scrypt MH/s</td>
