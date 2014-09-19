@@ -32,7 +32,7 @@
 		$sha_diff = number_format($diff[0], 2, '.', ',');
 		$sha_hashrate = number_format(($diff[0]/34.92331797)/1000, 2, '.', ',');
 		// 		  Units:     Sec	Diff	   ???	   hashrate MH/s
-		$sha_profit = number_format((86400 / (($diff[0] * 2**32) / $sha_hash * $hash_multiplier)) * $coins_per_block, 2, '.', ',');
+		$sha_profit = number_format((86400 / (($diff[0] * pow(2, 32)) / $sha_hash * $hash_multiplier)) * $coins_per_block, 2, '.', ',');
 		
 		$scrypt_diff = number_format($diff[1], 2, '.', ',');
 		$scrypt_hashrate = number_format($diff[1]/34.92331797, 2, '.', ',');
