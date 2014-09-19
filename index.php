@@ -76,11 +76,11 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 	  <table class="table">	
 	    <tr>
 		<td>Algorithm: </td>
-		<td>SHA256</td>
-		<td>Scrypt</td>
-		<td>Skein</td>
-		<td>Groestl</td>
-		<td>Qubit</td>
+		<td><b>Sha256</b></td>
+		<td><b>Scrypt</b></td>
+		<td><b>Skein</b></td>
+		<td><b>Groestl</b></td>
+		<td><b>Qubit</b></td>
 	    </tr>
 	    <tr>
 		<td>Current Difficulty:</td>
