@@ -32,23 +32,23 @@
 		$sha_diff = number_format($diff[0], 2, '.', ',');
 		$sha_hashrate = number_format(($diff[0]/34.92331797)/1000, 2, '.', ',');
 		// 		  Units:     Sec	Diff	   ???	   hashrate MH/s
-		$sha_profit = number_format((86400 / (($diff[0] * int(pow(2, 32))) / $sha_hash * $hash_multiplier)) * $coins_per_block, 2, '.', ',');
+		$sha_profit = number_format((86400 / (($diff[0] * pow(2, 32)) / ($sha_hash * $hash_multiplier))) * $coins_per_block, 2, '.', ',');
 		
 		$scrypt_diff = number_format($diff[1], 2, '.', ',');
 		$scrypt_hashrate = number_format($diff[1]/34.92331797, 2, '.', ',');
-		$scrypt_profit = number_format((86400 / (($diff[1] * int(pow(2, 32))) / $scrypt_hash * $hash_multiplier)) * $coins_per_block, 2, '.', ',');
+		$scrypt_profit = number_format((86400 / (($diff[1] * pow(2, 32)) / ($scrypt_hash * $hash_multiplier))) * $coins_per_block, 2, '.', ',');
 		
 		$skein_diff = number_format($diff[2], 2, '.', ',');
 		$skein_hashrate = number_format($diff[2]/34.92331797, 2, '.', ',');
-		$skein_profit = number_format((86400 / (($diff[2] * int(pow(2, 32))) / $skein_hash * $hash_multiplier)) * $coins_per_block, 2, '.', ',');
+		$skein_profit = number_format((86400 / (($diff[2] * pow(2, 32)) / ($skein_hash * $hash_multiplier))) * $coins_per_block, 2, '.', ',');
 		
 		$groestl_diff = number_format($diff[3], 2, '.', ',');
 		$groestl_hashrate = number_format($diff[3]/34.92331797, 2, '.', ',');
-		$groestl_profit = number_format((86400 / (($diff[3] * int(pow(2, 32))) / $groestl_hash * $hash_multiplier)) * $coins_per_block, 2, '.', ',');
+		$groestl_profit = number_format((86400 / (($diff[3] * pow(2, 32)) / ($groestl_hash * $hash_multiplier))) * $coins_per_block, 2, '.', ',');
 		
 		$qubit_diff = number_format($diff[4], 2, '.', ',');
 		$qubit_hashrate = number_format($diff[4]/34.92331797, 2, '.', ',');
-		$qubit_profit = number_format((86400 / (($diff[4] * int(pow(2, 32))) / $qubit_hash * $hash_multiplier)) * $coins_per_block, 2, '.', ',');
+		$qubit_profit = number_format((86400 / (($diff[4] * pow(2, 32)) / ($qubit_hash * $hash_multiplier))) * $coins_per_block, 2, '.', ',');
 	?>
 	
 		<div class="container" style="width:100%;float:left;">
