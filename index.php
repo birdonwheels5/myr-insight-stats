@@ -100,11 +100,11 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 	    </tr>
 	    <tr>
 		<td>Profitability/Day:</td>
-		<td><?php print $sha_profit; ?> MYR<br/>per GH/s</td>
-		<td><?php print $scrypt_profit; ?> MYR<br/>per Scrypt MH/s</td>
-		<td><?php print $skein_profit; ?> MYR<br/>per Scrypt MH/s</td>
-		<td><?php print $groestl_profit; ?> MYR<br/>per Scrypt MH/s</td>
-		<td><?php print $qubit_profit; ?> MYR<br/>per Scrypt MH/s</td>
+		<td><?php print $sha_profit; ?> MYR/GH/s</td>
+		<td><?php print $scrypt_profit; ?> MYR/Scrypt MH/s</td>
+		<td><?php print $skein_profit; ?> MYR/Scrypt MH/s</td>
+		<td><?php print $groestl_profit; ?> MYR/Scrypt MH/s</td>
+		<td><?php print $qubit_profit; ?> MYR/Scrypt MH/s</td>
 	    </tr>
 	    <tr>
 		<td></td>
