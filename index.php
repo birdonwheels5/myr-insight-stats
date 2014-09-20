@@ -177,30 +177,7 @@
 		
 		$diff = getDifficulties("scrape.html");
 		
-		if(!empty($_POST["sha"]) and !is_string($_POST["sha"]))
-		{
-			$sha_hashrate = $_POST["sha"];
-		}
-		
-		if(!empty($_POST["scrypt"]) and !is_string($_POST["scrypt"]))
-		{
-			$scrypt_hashrate = $_POST["scrypt"];
-		}
-		
-		if(!empty($_POST["skein"]) and !is_string($_POST["skein"]))
-		{
-			$skein_hashrate = $_POST["skein"];
-		}
-		
-		if(!empty($_POST["groestl"]) and !is_string($_POST["groestl"]))
-		{
-			$groestl_hashrate = $_POST["groestl"];
-		}
-		
-		if(!empty($_POST["qubit"]) and !is_string($_POST["qubit"]))
-		{
-			$qubit_hashrate = $_POST["qubit"];
-		}
+		$sha_hashrate = $sha_input;
 		
 		$sha_diff = number_format($diff[0], 2, '.', ',');
 		$sha_net_hashrate = number_format(($diff[0]/34.92331797)/1000, 2, '.', ',');
