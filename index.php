@@ -21,11 +21,11 @@
 		//$groestl_hash = 15;
 		//$qubit_hash = 7;
 		
-		$sha_hash = 1; // This one gets multiplied by 1000 later so we can use GH/s instead of MH/s
-		$scrypt_hash = 1; // Scrypt MH/s
-		$skein_hash = 1; // Skein MH/s
-		$groestl_hash = 1; // Groestl MH/s
-		$qubit_hash = 1; // Qubit MH/s
+		$sha_hashrate = 1000; // Sha GH/s
+		$scrypt_hashrate = 1; // Scrypt MH/s
+		$skein_hashrate = 1; // Skein MH/s
+		$groestl_hashrate = 1; // Groestl MH/s
+		$qubit_hashrate = 1; // Qubit MH/s
 		
 		$hash_multiplier = 1000000; // Gives you hashrate in hashes/sec for calculations
 		$coins_per_block = 1000; // Current block reward.
@@ -38,20 +38,33 @@
 		$sha_diff = number_format($diff[0], 2, '.', ',');
 		$sha_net_hashrate = number_format(($diff[0]/34.92331797)/1000, 2, '.', ',');
 		
-		$sha_profit = number_format((86400 / (($diff[0] * pow(2, 32)) / ($sha_hash * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+		$sha_profit = number_format((86400 / (($diff[0] * pow(2, 32)) / ($sha_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
 
 		
 		$scrypt_diff = number_format($diff[1], 2, '.', ',');
 		$scrypt_net_hashrate = number_format($diff[1]/34.92331797, 2, '.', ',');
 		
+		$scrypt_profit = number_format((86400 / (($diff[1] * pow(2, 32)) / ($scrypt_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+
+		
 		$skein_diff = number_format($diff[2], 2, '.', ',');
 		$skein_net_hashrate = number_format($diff[2]/34.92331797, 2, '.', ',');
+		
+		$skein_profit = number_format((86400 / (($diff[2] * pow(2, 32)) / ($skein_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+
 		
 		$groestl_diff = number_format($diff[3], 2, '.', ',');
 		$groestl_net_hashrate = number_format($diff[3]/34.92331797, 2, '.', ',');
 		
+		$groestl_profit = number_format((86400 / (($diff[3] * pow(2, 32)) / ($groestl_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+
+		
 		$qubit_diff = number_format($diff[4], 2, '.', ',');
 		$qubit_net_hashrate = number_format($diff[4]/34.92331797, 2, '.', ',');
+		
+		$qubit_profit = number_format((86400 / (($diff[4] * pow(2, 32)) / ($qubit_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+
+		
 		
 		$sha_input = "";
 		$scrypt_input = "";
