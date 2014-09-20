@@ -168,7 +168,7 @@
 		$groestl_profit = number_format((86400 / (($diff[3] * pow(2, 32)) / ($groestl_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
 		$qubit_profit = number_format((86400 / (($diff[4] * pow(2, 32)) / ($qubit_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
 		
-		if($_POST["submit"] == "Refresh Values")
+		if($_POST["refresh_values"])
 		{
 		scrape("http://birdonwheels5.no-ip.org:3000/status", "scrape.html");
 		
@@ -233,7 +233,7 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 
         <p><h3>Algorithm Statistics:</h3> 
         	    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-		    <input type="submit" name="submit" value="Refresh Values">
+		    <input type="submit" name="refresh_values" value="Refresh Values">
 		    
 	  <table class="table">	
 	    <tr>
