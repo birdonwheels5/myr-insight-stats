@@ -15,14 +15,20 @@
 		
 		// These values are used to compute coins/day for all algos. 
 		// Measured in MH/s and are estimates of 1 Scrypt MH/s
-		$sha_hash = 1000;
-		$scrypt_hash = 1;
-		$skein_hash = 280;
-		$groestl_hash = 15;
-		$qubit_hash = 7;
+		//$sha_hash = 1000;
+		//$scrypt_hash = 1;
+		//$skein_hash = 280;
+		//$groestl_hash = 15;
+		//$qubit_hash = 7;
 		
-		$hash_multiplier = 1000000;
-		$coins_per_block = 1000;
+		$sha_hash = 1000; // SHA GH/S
+		$scrypt_hash = 1; // Scrypt MH/s
+		$skein_hash = 1; // Skein MH/s
+		$groestl_hash = 1; // Groestl MH/s
+		$qubit_hash = 1; // Qubit MH/s
+		
+		$hash_multiplier = 1000000; // Gives you hashrate in hashes/sec for calculations
+		$coins_per_block = 1000; // Current block reward.
 		
 		scrape("http://birdonwheels5.no-ip.org:3000/status", "scrape.html");
 		
