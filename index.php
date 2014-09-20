@@ -9,7 +9,7 @@
 		<?php include "methodHelper.php"; ?>
 	</head>
 	
-	<body style="background-color:#f4f4f4;float:left;">
+	<body style="background-color:#f4f4f4;float:left;background-color:white">
 	
 	<?php
 		
