@@ -87,7 +87,7 @@
 				}
 				else
 				{
-					$sha_hashrate = $_POST["sha"] * 1000; // To accept inputs in GH/s
+					$sha_hashrate = $_POST["sha"]; // Multiplied later to be in GH/s
 					$sha_input = $sha_hashrate = $_POST["sha"];
 				}
 			}
@@ -164,7 +164,7 @@
 			
 			
 			// 		  Units:     Sec	Diff	   ???	   hashrate MH/s
-		$sha_profit = number_format((86400 / (($diff[0] * pow(2, 32)) / ($sha_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+		$sha_profit = number_format((86400 / (($diff[0] * pow(2, 32)) / (($sha_hashrate * 1000) * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
 		$scrypt_profit = number_format((86400 / (($diff[1] * pow(2, 32)) / ($scrypt_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
 		$skein_profit = number_format((86400 / (($diff[2] * pow(2, 32)) / ($skein_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
 		$groestl_profit = number_format((86400 / (($diff[3] * pow(2, 32)) / ($groestl_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
