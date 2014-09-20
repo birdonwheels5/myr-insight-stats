@@ -64,7 +64,7 @@
 				}
 				else
 				{
-					$sha_hashrate = $_POST["sha"] * 1000;
+					$sha_hashrate = $_POST["sha"] * 1000; // To accept inputs in GH/s
 				}
 			}
 			
