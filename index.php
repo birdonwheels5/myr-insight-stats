@@ -36,25 +36,112 @@
 		$diff = getDifficulties("scrape.html");
 		
 		$sha_diff = number_format($diff[0], 2, '.', ',');
-		$sha_hashrate = number_format(($diff[0]/34.92331797)/1000, 2, '.', ',');
-		// 		  Units:     Sec	Diff	   ???	   hashrate MH/s
-		$sha_profit = number_format((86400 / (($diff[0] * pow(2, 32)) / ($sha_hash * $hash_multiplier))) * $coins_per_block, 2, '.', ',');
+		$sha_net_hashrate = number_format(($diff[0]/34.92331797)/1000, 2, '.', ',');
 		
 		$scrypt_diff = number_format($diff[1], 2, '.', ',');
-		$scrypt_hashrate = number_format($diff[1]/34.92331797, 2, '.', ',');
-		$scrypt_profit = number_format((86400 / (($diff[1] * pow(2, 32)) / ($scrypt_hash * $hash_multiplier))) * $coins_per_block, 2, '.', ',');
+		$scrypt_net_hashrate = number_format($diff[1]/34.92331797, 2, '.', ',');
 		
 		$skein_diff = number_format($diff[2], 2, '.', ',');
-		$skein_hashrate = number_format($diff[2]/34.92331797, 2, '.', ',');
-		$skein_profit = number_format((86400 / (($diff[2] * pow(2, 32)) / ($skein_hash * $hash_multiplier))) * $coins_per_block, 2, '.', ',');
+		$skein_net_hashrate = number_format($diff[2]/34.92331797, 2, '.', ',');
 		
 		$groestl_diff = number_format($diff[3], 2, '.', ',');
-		$groestl_hashrate = number_format($diff[3]/34.92331797, 2, '.', ',');
-		$groestl_profit = number_format((86400 / (($diff[3] * pow(2, 32)) / ($groestl_hash * $hash_multiplier))) * $coins_per_block, 2, '.', ',');
+		$groestl_net_hashrate = number_format($diff[3]/34.92331797, 2, '.', ',');
 		
 		$qubit_diff = number_format($diff[4], 2, '.', ',');
-		$qubit_hashrate = number_format($diff[4]/34.92331797, 2, '.', ',');
-		$qubit_profit = number_format((86400 / (($diff[4] * pow(2, 32)) / ($qubit_hash * $hash_multiplier))) * $coins_per_block, 2, '.', ',');
+		$qubit_net_hashrate = number_format($diff[4]/34.92331797, 2, '.', ',');
+		
+		if ($_SERVER["REQUEST_METHOD"] == "POST") 
+		{
+			if (empty($_POST["sha"])) 
+			{
+				$sha_hashrate = 0;
+			}
+			else
+			{
+				if(is_string($_POST["sha"]) == false)
+				{
+					$sha_hashrate = 0;
+				}
+				else
+				{
+					$sha_hashrate = $_POST["sha"];
+				}
+			}
+			
+			if (empty($_POST["scrypt"])) 
+			{
+				$scrypt_hashrate = 0;
+			}
+			else
+			{
+				if(is_string($_POST["scrypt"]) == false)
+				{
+					$scrypt_hashrate = 0;
+				}
+				else
+				{
+					$scrypt_hashrate = $_POST["scrypt"];
+				}
+			}
+			
+			if (empty($_POST["skein"])) 
+			{
+				$skein_hashrate = 0;
+			}
+			else
+			{
+				if(is_string($_POST["skein"]) == false)
+				{
+					$skein_hashrate = 0;
+				}
+				else
+				{
+					$skein_hashrate = $_POST["skein"];
+				}
+			}
+			
+			if (empty($_POST["groestl"])) 
+			{
+				$groestl_hashrate = 0;
+			}
+			else
+			{
+				if(is_string($_POST["groestl"]) == false)
+				{
+					$groestl_hashrate = 0;
+				}
+				else
+				{
+					$groestl_hashrate = $_POST["groestl"];
+				}
+			}
+			
+			if (empty($_POST["qubit"])) 
+			{
+				$qubit_hashrate = 0;
+			}
+			else
+			{
+				if(is_string($_POST["qubit"]) == false)
+				{
+					$qubit_hashrate = 0;
+				}
+				else
+				{
+					$qubit_hashrate = $_POST["qubit"];
+				}
+			}
+			
+			
+			
+			
+			// 		  Units:     Sec	Diff	   ???	   hashrate MH/s
+		$sha_profit = number_format((86400 / (($diff[0] * pow(2, 32)) / ($sha_hashrate * $hash_multiplier))) * $coins_per_block, 2, '.', ',');
+		$scrypt_profit = number_format((86400 / (($diff[1] * pow(2, 32)) / ($scrypt_hashrate * $hash_multiplier))) * $coins_per_block, 2, '.', ',');
+		$skein_profit = number_format((86400 / (($diff[2] * pow(2, 32)) / ($skein_hashrate * $hash_multiplier))) * $coins_per_block, 2, '.', ',');
+		$groestl_profit = number_format((86400 / (($diff[3] * pow(2, 32)) / ($groestl_hashrate * $hash_multiplier))) * $coins_per_block, 2, '.', ',');
+		$qubit_profit = number_format((86400 / (($diff[4] * pow(2, 32)) / ($qubit_hashrate * $hash_multiplier))) * $coins_per_block, 2, '.', ',');
+
 	?>
 	
 		<div class="container" style="width:100%;float:left;">
@@ -101,19 +188,40 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 	    </tr>
 	    <tr>
 		<th>Network Hashrate:</th>
-		<td><?php print $sha_hashrate; ?><br/>TH/S</td>
-		<td><?php print $scrypt_hashrate; ?><br/>GH/s</td>
-		<td><?php print $skein_hashrate; ?><br/>GH/s</td>
-		<td><?php print $groestl_hashrate; ?><br/>GH/s</td>
-		<td><?php print $qubit_hashrate; ?><br/>GH/s</td>
+		<td><?php print $sha_net_hashrate; ?><br/>TH/S</td>
+		<td><?php print $scrypt_net_hashrate; ?><br/>GH/s</td>
+		<td><?php print $skein_net_hashrate; ?><br/>GH/s</td>
+		<td><?php print $groestl_net_hashrate; ?><br/>GH/s</td>
+		<td><?php print $qubit_net_hashrate; ?><br/>GH/s</td>
 	    </tr>
-	    <tr>
+     <!--   <tr>
 		<th>Profitability/Day:</th>
-		<td><?php print $sha_profit; ?> MYR/GH/s</td>
-		<td><?php print $scrypt_profit; ?> MYR/Scrypt MH/s</td>
-		<td><?php print $skein_profit; ?> MYR/Skein MH/s</td>
-		<td><?php print $groestl_profit; ?> MYR/Groestl MH/s</td>
-		<td><?php print $qubit_profit; ?> MYR/Qubit MH/s</td>
+		<td><?php //print $sha_profit; ?> MYR/GH/s</td>
+		<td><?php //print $scrypt_profit; ?> MYR/Scrypt MH/s</td>
+		<td><?php //print $skein_profit; ?> MYR/Skein MH/s</td>
+		<td><?php //print $groestl_profit; ?> MYR/Groestl MH/s</td>
+		<td><?php //print $qubit_profit; ?> MYR/Qubit MH/s</td>
+	    </tr> -->
+	    
+	    <tr>
+		<th><form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+		    Profitability/Day:<br/>Enter your Hashrate in MH/s
+		    <input type="submit" name="submit" value="Submit"></th>
+		<td>
+		    <input type="text" name="sha" value="<?php echo $sha_profit;?>">
+		    </td>
+		<td>
+		    <input type="text" name="scrypt" value="<?php echo $scrypt_profit;?>">
+		    </td>
+		<td>
+		    <input type="text" name="skein" value="<?php echo $skein_profit;?>">
+		    </td>
+		<td>
+		    <input type="text" name="groestl" value="<?php echo $groestl_profit;?>">
+		    </td>
+		<td>
+		    <input type="text" name="qubit" value="<?php echo $qubit_profit;?>">
+		    </form></td>
 	    </tr>
 	    <tr>
 		<td></td>
