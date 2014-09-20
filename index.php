@@ -15,13 +15,13 @@
 		
 		// These values are used to compute coins/day for all algos. 
 		// Measured in MH/s and are estimates of 1 Scrypt MH/s
-		//$sha_hash = 1000;
+		//$sha_hash = 1; // This one gets multiplied by 1000 later so we can use GH/s instead of MH/s
 		//$scrypt_hash = 1;
 		//$skein_hash = 280;
 		//$groestl_hash = 15;
 		//$qubit_hash = 7;
 		
-		$sha_hash = 1000; // SHA GH/S
+		$sha_hash = 1; // This one gets multiplied by 1000 later so we can use GH/s instead of MH/s
 		$scrypt_hash = 1; // Scrypt MH/s
 		$skein_hash = 1; // Skein MH/s
 		$groestl_hash = 1; // Groestl MH/s
@@ -38,6 +38,9 @@
 		$sha_diff = number_format($diff[0], 2, '.', ',');
 		$sha_net_hashrate = number_format(($diff[0]/34.92331797)/1000, 2, '.', ',');
 		
+		$sha_profit = number_format((86400 / (($diff[0] * pow(2, 32)) / ($sha_hash * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+
+		
 		$scrypt_diff = number_format($diff[1], 2, '.', ',');
 		$scrypt_net_hashrate = number_format($diff[1]/34.92331797, 2, '.', ',');
 		
@@ -50,8 +53,15 @@
 		$qubit_diff = number_format($diff[4], 2, '.', ',');
 		$qubit_net_hashrate = number_format($diff[4]/34.92331797, 2, '.', ',');
 		
+		$sha_input = "";
+		$scrypt_input = "";
+		$skein_input = "";
+		$groestl_input = "";
+		$qubit_input = "";
+		
 		if ($_SERVER["REQUEST_METHOD"] == "POST") 
 		{
+			
 			if (empty($_POST["sha"])) 
 			{
 				$sha_hashrate = 0;
@@ -65,6 +75,7 @@
 				else
 				{
 					$sha_hashrate = $_POST["sha"] * 1000; // To accept inputs in GH/s
+					$sha_input = $sha_hashrate = $_POST["sha"];
 				}
 			}
 			
@@ -81,6 +92,7 @@
 				else
 				{
 					$scrypt_hashrate = $_POST["scrypt"];
+					$scrypt_input = $scrypt_hashrate = $_POST["scrypt"];
 				}
 			}
 			
@@ -97,6 +109,7 @@
 				else
 				{
 					$skein_hashrate = $_POST["skein"];
+					$skein_input = $skein_hashrate = $_POST["skein"];
 				}
 			}
 			
@@ -113,6 +126,7 @@
 				else
 				{
 					$groestl_hashrate = $_POST["groestl"];
+					$groestl_input = $groestl_hashrate = $_POST["groestl"];
 				}
 			}
 			
@@ -129,6 +143,7 @@
 				else
 				{
 					$qubit_hashrate = $_POST["qubit"];
+					$qubit_input = $qubit_hashrate = $_POST["qubit"];
 				}
 			}
 			
@@ -194,37 +209,37 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 		<td><?php print $groestl_net_hashrate; ?><br/>GH/s</td>
 		<td><?php print $qubit_net_hashrate; ?><br/>GH/s</td>
 	    </tr>
-     <!--   <tr>
+	   <tr>
 		<th>Profitability/Day:</th>
-		<td><?php //print $sha_profit; ?> MYR/GH/s</td>
-		<td><?php //print $scrypt_profit; ?> MYR/Scrypt MH/s</td>
-		<td><?php //print $skein_profit; ?> MYR/Skein MH/s</td>
-		<td><?php //print $groestl_profit; ?> MYR/Groestl MH/s</td>
-		<td><?php //print $qubit_profit; ?> MYR/Qubit MH/s</td>
-	    </tr> -->
+		<td><?php print $sha_profit; ?> MYR/GH/s</td>
+		<td><?php print $scrypt_profit; ?> MYR/Scrypt MH/s</td>
+		<td><?php print $skein_profit; ?> MYR/Skein MH/s</td>
+		<td><?php print $groestl_profit; ?> MYR/Groestl MH/s</td>
+		<td><?php print $qubit_profit; ?> MYR/Qubit MH/s</td>
+	    </tr>
 	    
 	    <tr>
 		<th><form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 		    Profitability/Day:<br/>Enter your Hashrate(s).<br/>
 		    <input type="submit" name="submit" value="Submit"></th>
 		<td>
-		    <input type="text" name="sha" value="<?php echo $sha_profit;?>" size="4"><br/>
+		    <input type="text" name="sha" value="<?php echo $sha_input;?>" size="4"><br/>
 		    MYR (GH/s)
 		    </td>
 		<td>
-		    <input type="text" name="scrypt" value="<?php echo $scrypt_profit;?>" size="4"><br/>
+		    <input type="text" name="scrypt" value="<?php echo $scrypt_input;?>" size="4"><br/>
 		    MYR (MH/s)
 		    </td>
 		<td>
-		    <input type="text" name="skein" value="<?php echo $skein_profit;?>" size="4"><br/>
+		    <input type="text" name="skein" value="<?php echo $skein_input;?>" size="4"><br/>
 		    MYR (MH/s)
 		    </td>
 		<td>
-		    <input type="text" name="groestl" value="<?php echo $groestl_profit;?>" size="4"><br/>
+		    <input type="text" name="groestl" value="<?php echo $groestl_input;?>" size="4"><br/>
 		    MYR (MH/s)
 		    </td>
 		<td>
-		    <input type="text" name="qubit" value="<?php echo $qubit_profit;?>" size="4"><br/>
+		    <input type="text" name="qubit" value="<?php echo $qubit_input;?>" size="4"><br/>
 		    MYR (MH/s)
 		    </form></td>
 	    </tr>
