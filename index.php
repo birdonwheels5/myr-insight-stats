@@ -75,6 +75,10 @@
 		if ($_SERVER["REQUEST_METHOD"] == "POST") 
 		{
 			
+		scrape("http://birdonwheels5.no-ip.org:3000/status", "scrape.html");
+		
+		$diff = getDifficulties("scrape.html");
+			
 			if (empty($_POST["sha"])) 
 			{
 				//$sha_hashrate = 0;
@@ -160,15 +164,6 @@
 				}
 			}
 			
-			$_SESSION["sha_input"] = $_POST["sha"];
-			$_SESSION["scrypt_input"] = $_POST["scrypt"];
-			$_SESSION["skein_input"] = $_POST["skein"];
-			$_SESSION["groestl_input"] = $_POST["groestl"];
-			$_SESSION["qubit_input"] = $_POST["qubit"];
-			
-			
-			
-			
 			// 		  Units:     Sec	Diff	   ???	   hashrate MH/s
 		$sha_profit = number_format((86400 / (($diff[0] * pow(2, 32)) / (($sha_hashrate * 1000) * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
 		$scrypt_profit = number_format((86400 / (($diff[1] * pow(2, 32)) / ($scrypt_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
@@ -176,72 +171,6 @@
 		$groestl_profit = number_format((86400 / (($diff[3] * pow(2, 32)) / ($groestl_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
 		$qubit_profit = number_format((86400 / (($diff[4] * pow(2, 32)) / ($qubit_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
 		
-		if($_POST["submit"] == "Refresh Values")
-		{
-		
-		scrape("http://birdonwheels5.no-ip.org:3000/status", "scrape.html");
-		
-		$diff = getDifficulties("scrape.html");
-		
-		if(!is_string($_SESSION["sha_input"]))
-		{
-			$sha_hashrate = $_SESSION["sha_input"];
-			$sha_input = $_SESSION["sha_input"];
-		}
-		
-		if(!is_string($_SESSION["scrypt_input"]))
-		{
-			$scrypt_hashrate = $_SESSION["scrypt_input"];
-			$scrypt_input = $_SESSION["scrypt_input"];
-		}
-		
-		if(!is_string($_SESSION["skein_input"]))
-		{
-			$skein_hashrate = $_SESSION["skein_input"];
-			$skein_input = $_SESSION["skein_input"];
-		}
-		
-		if(!is_string($_SESSION["groestl_input"]))
-		{
-			$groestl_hashrate = $_SESSION["groestl_input"];
-			$groestl_input = $_SESSION["groestl_input"];
-		}
-		
-		if(!is_string($_SESSION["qubit_input"]))
-		{
-			$qubit_hashrate = $_SESSION["qubit_input"];
-			$qubit_input = $_SESSION["qubit_input"];
-		}
-		
-		$sha_diff = number_format($diff[0], 2, '.', ',');
-		$sha_net_hashrate = number_format(($diff[0]/34.92331797)/1000, 2, '.', ',');
-		
-		$sha_profit = number_format((86400 / (($diff[0] * pow(2, 32)) / (($sha_hashrate * 1000) * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
-
-		
-		$scrypt_diff = number_format($diff[1], 2, '.', ',');
-		$scrypt_net_hashrate = number_format($diff[1]/34.92331797, 2, '.', ',');
-		
-		$scrypt_profit = number_format((86400 / (($diff[1] * pow(2, 32)) / ($scrypt_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
-
-		
-		$skein_diff = number_format($diff[2], 2, '.', ',');
-		$skein_net_hashrate = number_format($diff[2]/34.92331797, 2, '.', ',');
-		
-		$skein_profit = number_format((86400 / (($diff[2] * pow(2, 32)) / ($skein_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
-
-		
-		$groestl_diff = number_format($diff[3], 2, '.', ',');
-		$groestl_net_hashrate = number_format($diff[3]/34.92331797, 2, '.', ',');
-		
-		$groestl_profit = number_format((86400 / (($diff[3] * pow(2, 32)) / ($groestl_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
-
-		
-		$qubit_diff = number_format($diff[4], 2, '.', ',');
-		$qubit_net_hashrate = number_format($diff[4]/34.92331797, 2, '.', ',');
-		
-		$qubit_profit = number_format((86400 / (($diff[4] * pow(2, 32)) / ($qubit_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
-		}
 }
 	?>
 	
