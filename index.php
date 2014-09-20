@@ -21,7 +21,7 @@
 		//$groestl_hash = 15;
 		//$qubit_hash = 7;
 		
-		$sha_hashrate = 1000; // Sha GH/s
+		$sha_hashrate = 1; // This one gets multiplied by 1000 later so we can use GH/s instead of MH/s
 		$scrypt_hashrate = 1; // Scrypt MH/s
 		$skein_hashrate = 1; // Skein MH/s
 		$groestl_hashrate = 1; // Groestl MH/s
@@ -38,7 +38,7 @@
 		$sha_diff = number_format($diff[0], 2, '.', ',');
 		$sha_net_hashrate = number_format(($diff[0]/34.92331797)/1000, 2, '.', ',');
 		
-		$sha_profit = number_format((86400 / (($diff[0] * pow(2, 32)) / ($sha_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+		$sha_profit = number_format((86400 / (($diff[0] * pow(2, 32)) / (($sha_hashrate * 1000) * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
 
 		
 		$scrypt_diff = number_format($diff[1], 2, '.', ',');
