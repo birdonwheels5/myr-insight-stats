@@ -160,6 +160,12 @@
 				}
 			}
 			
+			$_SESSION["sha_input"] = $_POST["sha"];
+			$_SESSION["scrypt_input"] = $_POST["scrypt"];
+			$_SESSION["skein_input"] = $_POST["skein"];
+			$_SESSION["groestl_input"] = $_POST["groestl"];
+			$_SESSION["qubit_input"] = $_POST["qubit"];
+			
 			
 			
 			
@@ -177,7 +183,35 @@
 		
 		$diff = getDifficulties("scrape.html");
 		
-		$sha_hashrate = $sha_input;
+		if(!is_string($_SESSION["sha_input"]))
+		{
+			$sha_hashrate = $_SESSION["sha_input"];
+			$sha_input = $_SESSION["sha_input"];
+		}
+		
+		if(!is_string($_SESSION["scrypt_input"]))
+		{
+			$scrypt_hashrate = $_SESSION["scrypt_input"];
+			$scrypt_input = $_SESSION["scrypt_input"];
+		}
+		
+		if(!is_string($_SESSION["skein_input"]))
+		{
+			$skein_hashrate = $_SESSION["skein_input"];
+			$skein_input = $_SESSION["skein_input"];
+		}
+		
+		if(!is_string($_SESSION["groestl_input"]))
+		{
+			$groestl_hashrate = $_SESSION["groestl_input"];
+			$groestl_input = $_SESSION["groestl_input"];
+		}
+		
+		if(!is_string($_SESSION["qubit_input"]))
+		{
+			$qubit_hashrate = $_SESSION["qubit_input"];
+			$qubit_input = $_SESSION["qubit_input"];
+		}
 		
 		$sha_diff = number_format($diff[0], 2, '.', ',');
 		$sha_net_hashrate = number_format(($diff[0]/34.92331797)/1000, 2, '.', ',');
