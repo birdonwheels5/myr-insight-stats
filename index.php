@@ -200,7 +200,7 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 
         <p><h3>Algorithm Statistics:</h3> 
         	    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-		    <input type="submit" name="submit" value="Refresh Values">
+		    Refresh Values: <input type="submit" name="submit" value="Submit">
 		    </form>
 	  <table class="table">	
 	    <tr>
