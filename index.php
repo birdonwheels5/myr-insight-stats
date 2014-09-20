@@ -224,7 +224,7 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 	    </tr>
 	   <tr>
 		<th>Profitability/Day:<br/>
-		    (Defaults to MYR per MH/s of selected algorithm. Use fields to calculate your hashrate!)</th>
+		    (Defaults to MYR per MH/s of the algorithm.)</th>
 		<td><?php print $sha_profit; ?> MYR/GH/s</td>
 		<td><?php print $scrypt_profit; ?> MYR/Scrypt MH/s</td>
 		<td><?php print $skein_profit; ?> MYR/Skein MH/s</td>
