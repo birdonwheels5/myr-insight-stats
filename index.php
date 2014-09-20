@@ -205,22 +205,22 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 	    
 	    <tr>
 		<th><form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-		    Profitability/Day:<br/>Enter your Hashrate in MH/s
+		    Profitability/Day:<br/>Enter your Hashrate in MH/s<br/>
 		    <input type="submit" name="submit" value="Submit"></th>
 		<td>
-		    <input type="text" name="sha" value="<?php echo $sha_profit;?>">
+		    <input type="text" name="sha" value="<?php echo $sha_profit;?>" maxlength="4" size="4">
 		    </td>
 		<td>
-		    <input type="text" name="scrypt" value="<?php echo $scrypt_profit;?>">
+		    <input type="text" name="scrypt" value="<?php echo $scrypt_profit;?>" maxlength="4" size="4">
 		    </td>
 		<td>
-		    <input type="text" name="skein" value="<?php echo $skein_profit;?>">
+		    <input type="text" name="skein" value="<?php echo $skein_profit;?>" maxlength="4" size="4">
 		    </td>
 		<td>
-		    <input type="text" name="groestl" value="<?php echo $groestl_profit;?>">
+		    <input type="text" name="groestl" value="<?php echo $groestl_profit;?>" maxlength="4" size="4">
 		    </td>
 		<td>
-		    <input type="text" name="qubit" value="<?php echo $qubit_profit;?>">
+		    <input type="text" name="qubit" value="<?php echo $qubit_profit;?>" maxlength="4" size="4">
 		    </form></td>
 	    </tr>
 	    <tr>
