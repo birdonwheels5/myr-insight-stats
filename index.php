@@ -234,7 +234,7 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 	    
 	    <tr>
 		<th><form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-		    Profitability/Day:<br/>Enter your Hashrate(s).<br/>
+		    Profitability/Day:<br/>Enter your Hashrate<br/>
 		    <input type="submit" name="submit" value="Submit"></th>
 		<td>
 		    <input type="text" name="sha" value="<?php echo $sha_input;?>" size="4"><br/>
