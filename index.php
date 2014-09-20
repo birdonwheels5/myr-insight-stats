@@ -174,7 +174,6 @@
 		{
 		scrape("http://birdonwheels5.no-ip.org:3000/status", "scrape.html");
 		
-		$diff = array();
 		$diff = getDifficulties("scrape.html");
 		
 		$sha_diff = number_format($diff[0], 2, '.', ',');
@@ -274,7 +273,7 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 	    </tr>
 	    
 	    <tr>
-		<th><form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+		<th>
 		    Profitability/Day:<br/>Enter your Hashrate<br/>
 		    <input type="submit" name="submit" value="Submit"></th>
 		<td>
