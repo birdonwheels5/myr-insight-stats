@@ -77,6 +77,9 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 		<li><a href="http://birdonwheels5.no-ip.org/myr-hub/" target="_parent">Bird's Myriadcoin P2pool Hub</a>
 		<li><a href="http://birdonwheels5.no-ip.org/home/" target="_parent">Bird's Website Home Page</a>
 	</ul></p>
+	
+	<p><h4>Did you know? You can change the currency that values are displayed in to USD! 
+	Click on MYR in the top right corner of the page, and click USD. (This feature is still in development)</h4></p>
 
         <p><h3>Algorithm Statistics:</h3> (Refresh page to refresh values)<br/>
 	  <table class="table">	
@@ -108,9 +111,9 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 		<th>Profitability/Day:</th>
 		<td><?php print $sha_profit; ?> MYR/GH/s</td>
 		<td><?php print $scrypt_profit; ?> MYR/Scrypt MH/s</td>
-		<td><?php print $skein_profit; ?> MYR/Scrypt MH/s</td>
-		<td><?php print $groestl_profit; ?> MYR/Scrypt MH/s</td>
-		<td><?php print $qubit_profit; ?> MYR/Scrypt MH/s</td>
+		<td><?php print $skein_profit; ?> MYR/Skein MH/s</td>
+		<td><?php print $groestl_profit; ?> MYR/Groestl MH/s</td>
+		<td><?php print $qubit_profit; ?> MYR/Qubit MH/s</td>
 	    </tr>
 	    <tr>
 		<td></td>
