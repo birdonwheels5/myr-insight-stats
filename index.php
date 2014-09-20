@@ -184,7 +184,7 @@
 Each algorithm has an independent difficulty, and a block time of 2.5 minutes, which averages out to 30 seconds per block across all the algorithms. 
 The 5 algorithms that comprise Myriadcoin are Sha256, Scrypt, Groestl, Skein, and Qubit. 
 For more information, visit <a href="http://myriadplatform.org" target="_blank">MyriadPlatform.org</a></p>
-<br/>
+
 	<p>Links of interest: 
 	<ul>
 		<li><a href="http://birdonwheels5.no-ip.org/richlist/"target="_parent">Top 1000 Richest Myriadcoin Addresses</a>
@@ -224,7 +224,7 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 	    </tr>
 	   <tr>
 		<th>Profitability/Day:<br/>
-		    (Defaults to MYR per MH/s of the algorithm.)</th>
+		    (Defaults to MYR per MH/s of the algo.)</th>
 		<td><?php print $sha_profit; ?> MYR/GH/s</td>
 		<td><?php print $scrypt_profit; ?> MYR/Scrypt MH/s</td>
 		<td><?php print $skein_profit; ?> MYR/Skein MH/s</td>
@@ -238,23 +238,23 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 		    <input type="submit" name="submit" value="Submit"></th>
 		<td>
 		    <input type="text" name="sha" value="<?php echo $sha_input;?>" size="4"><br/>
-		    MYR (GH/s)
+		    MYR <br/> (GH/s)
 		    </td>
 		<td>
 		    <input type="text" name="scrypt" value="<?php echo $scrypt_input;?>" size="4"><br/>
-		    MYR (MH/s)
+		    MYR <br/> (MH/s)
 		    </td>
 		<td>
 		    <input type="text" name="skein" value="<?php echo $skein_input;?>" size="4"><br/>
-		    MYR (MH/s)
+		    MYR <br/> (MH/s)
 		    </td>
 		<td>
 		    <input type="text" name="groestl" value="<?php echo $groestl_input;?>" size="4"><br/>
-		    MYR (MH/s)
+		    MYR <br/> (MH/s)
 		    </td>
 		<td>
 		    <input type="text" name="qubit" value="<?php echo $qubit_input;?>" size="4"><br/>
-		    MYR (MH/s)
+		    MYR <br/> (MH/s)
 		    </form></td>
 	    </tr>
 <!--	    <tr>
