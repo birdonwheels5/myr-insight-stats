@@ -208,19 +208,24 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 		    Profitability/Day:<br/>Enter your Hashrate in MH/s<br/>
 		    <input type="submit" name="submit" value="Submit"></th>
 		<td>
-		    <input type="text" name="sha" value="<?php echo $sha_profit;?>" size="4">
+		    <input type="text" name="sha" value="<?php echo $sha_profit;?>" size="4"><br/>
+		    MYR
 		    </td>
 		<td>
-		    <input type="text" name="scrypt" value="<?php echo $scrypt_profit;?>" size="4">
+		    <input type="text" name="scrypt" value="<?php echo $scrypt_profit;?>" size="4"><br/>
+		    MYR
 		    </td>
 		<td>
-		    <input type="text" name="skein" value="<?php echo $skein_profit;?>" size="4">
+		    <input type="text" name="skein" value="<?php echo $skein_profit;?>" size="4"><br/>
+		    MYR
 		    </td>
 		<td>
-		    <input type="text" name="groestl" value="<?php echo $groestl_profit;?>" size="4">
+		    <input type="text" name="groestl" value="<?php echo $groestl_profit;?>" size="4"><br/>
+		    MYR
 		    </td>
 		<td>
-		    <input type="text" name="qubit" value="<?php echo $qubit_profit;?>" size="4">
+		    <input type="text" name="qubit" value="<?php echo $qubit_profit;?>" size="4"><br/>
+		    MYR
 		    </form></td>
 	    </tr>
 	    <tr>
