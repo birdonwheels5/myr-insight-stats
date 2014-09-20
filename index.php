@@ -169,6 +169,44 @@
 		$skein_profit = number_format((86400 / (($diff[2] * pow(2, 32)) / ($skein_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
 		$groestl_profit = number_format((86400 / (($diff[3] * pow(2, 32)) / ($groestl_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
 		$qubit_profit = number_format((86400 / (($diff[4] * pow(2, 32)) / ($qubit_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+		
+		if($_POST["submit"] == "Refresh Values")
+		{
+		
+		scrape("http://birdonwheels5.no-ip.org:3000/status", "scrape.html");
+		
+		$diff = array();
+		$diff = getDifficulties("scrape.html");
+		
+		$sha_diff = number_format($diff[0], 2, '.', ',');
+		$sha_net_hashrate = number_format(($diff[0]/34.92331797)/1000, 2, '.', ',');
+		
+		$sha_profit = number_format((86400 / (($diff[0] * pow(2, 32)) / (($sha_hashrate * 1000) * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+
+		
+		$scrypt_diff = number_format($diff[1], 2, '.', ',');
+		$scrypt_net_hashrate = number_format($diff[1]/34.92331797, 2, '.', ',');
+		
+		$scrypt_profit = number_format((86400 / (($diff[1] * pow(2, 32)) / ($scrypt_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+
+		
+		$skein_diff = number_format($diff[2], 2, '.', ',');
+		$skein_net_hashrate = number_format($diff[2]/34.92331797, 2, '.', ',');
+		
+		$skein_profit = number_format((86400 / (($diff[2] * pow(2, 32)) / ($skein_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+
+		
+		$groestl_diff = number_format($diff[3], 2, '.', ',');
+		$groestl_net_hashrate = number_format($diff[3]/34.92331797, 2, '.', ',');
+		
+		$groestl_profit = number_format((86400 / (($diff[3] * pow(2, 32)) / ($groestl_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+
+		
+		$qubit_diff = number_format($diff[4], 2, '.', ',');
+		$qubit_net_hashrate = number_format($diff[4]/34.92331797, 2, '.', ',');
+		
+		$qubit_profit = number_format((86400 / (($diff[4] * pow(2, 32)) / ($qubit_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+		}
 }
 	?>
 	
@@ -185,7 +223,7 @@ Each algorithm has an independent difficulty, and a block time of 2.5 minutes, w
 The 5 algorithms that comprise Myriadcoin are Sha256, Scrypt, Groestl, Skein, and Qubit. 
 For more information, visit <a href="http://myriadplatform.org" target="_blank">MyriadPlatform.org</a></p>
 
-	<p>Links of interest: 
+	<p><h4>Links of interest:</h4> 
 	<ul>
 		<li><a href="http://birdonwheels5.no-ip.org/richlist/"target="_parent">Top 1000 Richest Myriadcoin Addresses</a>
 		<li><a href="http://birdonwheels5.no-ip.org/myriad-bounty/" target="_parent">Myriadcoin Bounty Board</a>
@@ -196,7 +234,10 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 	<p><h4>Did you know?</h4> You can change the currency that values are displayed in to USD! 
 	Click on MYR in the top right corner of the page, and select USD. (This feature is still in development)</p>
 
-        <p><h3>Algorithm Statistics:</h3> (Refresh page to refresh values)<br/>
+        <p><h3>Algorithm Statistics:</h3> 
+        	    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+		    <input type="submit" name="submit" value="Refresh Values">
+		    </form>
 	  <table class="table">	
 	    <tr>
 		<td>Algorithm: </td>
