@@ -79,7 +79,7 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 	</ul></p>
 	
 	<p><h4>Did you know? You can change the currency that values are displayed in to USD! 
-	Click on MYR in the top right corner of the page, and click USD. (This feature is still in development)</h4></p>
+	Click on MYR in the top right corner of the page, and select USD. (This feature is still in development)</h4></p>
 
         <p><h3>Algorithm Statistics:</h3> (Refresh page to refresh values)<br/>
 	  <table class="table">	
