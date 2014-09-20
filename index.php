@@ -83,7 +83,7 @@
 			{
 				if(is_string($_POST["sha"]) == false)
 				{
-					$sha_hashrate = 0;
+					//$sha_hashrate = 0;
 				}
 				else
 				{
@@ -94,7 +94,7 @@
 			
 			if (empty($_POST["scrypt"])) 
 			{
-				$scrypt_hashrate = 0;
+				//$scrypt_hashrate = 0;
 			}
 			else
 			{
@@ -111,7 +111,7 @@
 			
 			if (empty($_POST["skein"])) 
 			{
-				$skein_hashrate = 0;
+				//$skein_hashrate = 0;
 			}
 			else
 			{
@@ -128,7 +128,7 @@
 			
 			if (empty($_POST["groestl"])) 
 			{
-				$groestl_hashrate = 0;
+				//$groestl_hashrate = 0;
 			}
 			else
 			{
@@ -145,7 +145,7 @@
 			
 			if (empty($_POST["qubit"])) 
 			{
-				$qubit_hashrate = 0;
+				//$qubit_hashrate = 0;
 			}
 			else
 			{
@@ -223,7 +223,8 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 		<td><?php print $qubit_net_hashrate; ?><br/>GH/s</td>
 	    </tr>
 	   <tr>
-		<th>Profitability/Day:</th>
+		<th>Profitability/Day:<br/>
+		    (Defaults to MYR per MH/s of selected algorithm. Use fields to calculate your hashrate!)</th>
 		<td><?php print $sha_profit; ?> MYR/GH/s</td>
 		<td><?php print $scrypt_profit; ?> MYR/Scrypt MH/s</td>
 		<td><?php print $skein_profit; ?> MYR/Skein MH/s</td>
@@ -256,14 +257,14 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 		    MYR (MH/s)
 		    </form></td>
 	    </tr>
-	    <tr>
+<!--	    <tr>
 		<td></td>
 		<td></td>
 		<td></td>
 		<td></td>
 		<td></td>
 		<td></td>
-	    </tr>
+	    </tr> -->
 	</table>
 
 </p>
