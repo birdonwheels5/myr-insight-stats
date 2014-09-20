@@ -74,7 +74,8 @@
 		
 		if ($_SERVER["REQUEST_METHOD"] == "POST") 
 		{
-			
+			if($_POST["submit"] == "Submit")
+			{
 			
 			if (empty($_POST["sha"])) 
 			{
@@ -168,13 +169,15 @@
 		$groestl_profit = number_format((86400 / (($diff[3] * pow(2, 32)) / ($groestl_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
 		$qubit_profit = number_format((86400 / (($diff[4] * pow(2, 32)) / ($qubit_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
 		
+	}
 		if($_POST["submit"] == "Refresh Values")
 		{
 		scrape("http://birdonwheels5.no-ip.org:3000/status", "scrape.html");
 		
+		$diff = array();
 		$diff = getDifficulties("scrape.html");
 		
-				$sha_diff = number_format($diff[0], 2, '.', ',');
+		$sha_diff = number_format($diff[0], 2, '.', ',');
 		$sha_net_hashrate = number_format(($diff[0]/34.92331797)/1000, 2, '.', ',');
 		
 		$sha_profit = number_format((86400 / (($diff[0] * pow(2, 32)) / (($sha_hashrate * 1000) * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
