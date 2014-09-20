@@ -77,7 +77,7 @@
 			
 			if (empty($_POST["sha"])) 
 			{
-				$sha_hashrate = 0;
+				//$sha_hashrate = 0;
 			}
 			else
 			{
