@@ -6,7 +6,8 @@
 		<title>Wat?</title>
 		<link rel="stylesheet" href="http://birdonwheels5.no-ip.org/css/main.min.css">
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" title="Font Styles"/>
-		<?php include "methodHelper.php"; ?>
+		<?php include "methodHelper.php";
+			  include "userManager.php"; ?>
 	</head>
 	
 	<body style="background-color:#f4f4f4;float:left;background-color:white">
@@ -15,17 +16,47 @@
 		
 		// These values are used to compute coins/day for all algos. 
 		// Measured in MH/s and are estimates of 1 Scrypt MH/s
-		//$sha_hash = 1; // This one gets multiplied by 1000 later so we can use GH/s instead of MH/s
-		//$scrypt_hash = 1;
-		//$skein_hash = 280;
-		//$groestl_hash = 15;
-		//$qubit_hash = 7;
+		//$sha_hashrate = 1; // This one gets multiplied by 1000 later so we can use GH/s instead of MH/s
+		//$scrypt_hashrate = 1;
+		//$skein_hashrate = 280;
+		//$groestl_hashrate = 15;
+		//$qubit_hashrate = 7;
 		
-		$sha_hashrate = 1; // This one gets multiplied by 1000 later so we can use GH/s instead of MH/s
-		$scrypt_hashrate = 1; // Scrypt MH/s
-		$skein_hashrate = 1; // Skein MH/s
-		$groestl_hashrate = 1; // Groestl MH/s
-		$qubit_hashrate = 1; // Qubit MH/s
+		
+		// Determine if the user loading the page has been here before.
+		$ip = $_SERVER['REMOTE_ADDR'];
+		$filename = "ip_data.dat";
+		$user_position_in_array = search_ip_address($filename, $ip);
+		$is_ip_unique;
+		
+		users = array();
+		users = read_users("ip_data.dat");
+		
+		
+		if($user_position_in_array >= 0)
+		{
+			$is_ip_unique = false;
+			$sha_hashrate = $sha_input = users[$user_position_in_array]->get_sha_hashrate();
+			$scrypt_hashrate = $scrypt_input = users[$user_position_in_array]->get_scrypt_hashrate();
+			$skein_hashrate = $skein_input = users[$user_position_in_array]->get_skein_hashrate();
+			$groestl_hashrate = $groestl_input = users[$user_position_in_array]->get_groestl_hashrate();
+			$qubit_hashrate = $qubit_input = users[$user_position_in_array]->get_qubit_hashrate();
+		}
+		else
+		{
+			$is_ip_unique = true;
+			$sha_hashrate = 1; // This one gets multiplied by 1000 later so we can use GH/s instead of MH/s
+			$sha_input = "";
+			$scrypt_hashrate = 1; // Scrypt MH/s
+			$scrypt_input = "";
+			$skein_hashrate = 1; // Skein MH/s
+			$skein_input = "";
+			$groestl_hashrate = 1; // Groestl MH/s
+			$groestl_input = "";
+			$qubit_hashrate = 1; // Qubit MH/s
+			$qubit_input = "";
+		}
+		
 		
 		$hash_multiplier = 1000000; // Gives you hashrate in hashes/sec for calculations
 		$coins_per_block = 1000; // Current block reward.
@@ -63,14 +94,6 @@
 		$qubit_net_hashrate = number_format($diff[4]/34.92331797, 2, '.', ',');
 		
 		$qubit_profit = number_format((86400 / (($diff[4] * pow(2, 32)) / ($qubit_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
-
-		
-		
-		$sha_input = "";
-		$scrypt_input = "";
-		$skein_input = "";
-		$groestl_input = "";
-		$qubit_input = "";
 		
 		if ($_SERVER["REQUEST_METHOD"] == "POST") 
 		{
@@ -82,14 +105,15 @@
 			}
 			else
 			{
-				if(is_string($_POST["sha"]) == false)
+				if(!is_string($_POST["sha"]))
 				{
-					//$sha_hashrate = 0;
+					$sha_hashrate = 1;
+					$sha_input = $sha_hashrate;
 				}
 				else
 				{
 					$sha_hashrate = $_POST["sha"]; // Multiplied later to be in GH/s
-					$sha_input = $sha_hashrate = $_POST["sha"];
+					$sha_input = $sha_hashrate;
 				}
 			}
 			
@@ -99,14 +123,15 @@
 			}
 			else
 			{
-				if(is_string($_POST["scrypt"]) == false)
+				if(!is_string($_POST["scrypt"]))
 				{
-					$scrypt_hashrate = 0;
+					$scrypt_hashrate = 1;
+					$skein_input = "";
 				}
 				else
 				{
 					$scrypt_hashrate = $_POST["scrypt"];
-					$scrypt_input = $scrypt_hashrate = $_POST["scrypt"];
+					$scrypt_input = $scrypt_hashrate;
 				}
 			}
 			
@@ -116,14 +141,15 @@
 			}
 			else
 			{
-				if(is_string($_POST["skein"]) == false)
+				if(!is_string($_POST["skein"]))
 				{
-					$skein_hashrate = 0;
+					$skein_hashrate = 1;
+					$skein_input = "";
 				}
 				else
 				{
 					$skein_hashrate = $_POST["skein"];
-					$skein_input = $skein_hashrate = $_POST["skein"];
+					$skein_input = $skein_hashrate;
 				}
 			}
 			
@@ -133,14 +159,15 @@
 			}
 			else
 			{
-				if(is_string($_POST["groestl"]) == false)
+				if(!is_string($_POST["groestl"]))
 				{
-					$groestl_hashrate = 0;
+					$groestl_hashrate = 1;
+					$groestl_input = "";
 				}
 				else
 				{
 					$groestl_hashrate = $_POST["groestl"];
-					$groestl_input = $groestl_hashrate = $_POST["groestl"];
+					$groestl_input = $groestl_hashrate;
 				}
 			}
 			
@@ -150,14 +177,15 @@
 			}
 			else
 			{
-				if(is_string($_POST["qubit"]) == false)
+				if(!is_string($_POST["qubit"]))
 				{
-					$qubit_hashrate = 0;
+					$qubit_hashrate = 1;
+					$qubit_input = "";
 				}
 				else
 				{
 					$qubit_hashrate = $_POST["qubit"];
-					$qubit_input = $qubit_hashrate = $_POST["qubit"];
+					$qubit_input = $qubit_hashrate;
 				}
 			}
 			
@@ -167,6 +195,20 @@
 		$skein_profit = number_format((86400 / (($diff[2] * pow(2, 32)) / ($skein_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
 		$groestl_profit = number_format((86400 / (($diff[3] * pow(2, 32)) / ($groestl_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
 		$qubit_profit = number_format((86400 / (($diff[4] * pow(2, 32)) / ($qubit_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+		
+		
+		if($is_ip_unique == false)
+		{
+			if($sha_hashrate != $users[$user_position_in_array]->get_sha_hashrate() or $scrypt_hashrate != $users[$user_position_in_array]->get_scrypt_hashrate() or $skein_hashrate != $users[$user_position_in_array]->get_skein_hashrate() or $groestl_hashrate != $users[$user_position_in_array]->get_groestl_hashrate() or $qubit_hashrate != $users[$user_position_in_array]->get_qubit_hashrate())
+			{
+				remove_user($filename, $user_position_in_array);
+				file_put_contents($filename, "ip: " . $ip . "\n" . "sha: " . $sha_hashrate  . "\n" . "scrypt: " . $scrypt_hashrate . "\n" . "skein: " . $skein_hashrate . "\n" . "groestl: " . $groestl_hashrate . "\n" . "qubit: " . $qubit_hashrate . "\n" . $separator . "\n", FILE_APPEND);
+			}
+		}
+		else
+		{
+			file_put_contents($filename, "ip: " . $ip . "\n" . "sha: " . $sha_hashrate  . "\n" . "scrypt: " . $scrypt_hashrate . "\n" . "skein: " . $skein_hashrate . "\n" . "groestl: " . $groestl_hashrate . "\n" . "qubit: " . $qubit_hashrate . "\n" . $separator . "\n", FILE_APPEND);
+		}
 		
 		if($_POST["refresh_values"])
 		{
