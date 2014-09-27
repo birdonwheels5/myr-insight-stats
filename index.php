@@ -203,12 +203,12 @@
 			if($sha_hashrate != $users[$user_position_in_array]->get_sha_hashrate() or $scrypt_hashrate != $users[$user_position_in_array]->get_scrypt_hashrate() or $skein_hashrate != $users[$user_position_in_array]->get_skein_hashrate() or $groestl_hashrate != $users[$user_position_in_array]->get_groestl_hashrate() or $qubit_hashrate != $users[$user_position_in_array]->get_qubit_hashrate())
 			{
 				remove_user($filename, $user_position_in_array);
-				file_put_contents($filename, "ip: " . $ip . "\n" . "sha: " . $sha_input  . "\n" . "scrypt: " . $scrypt_input . "\n" . "skein: " . $skein_input . "\n" . "groestl: " . $groestl_input . "\n" . "qubit: " . $qubit_input . "\n" . $separator . "\n", FILE_APPEND);
+				file_put_contents($filename, "ip: " . $ip . "\n" . "sha: " . $sha_hashrate  . "\n" . "scrypt: " . $scrypt_hashrate . "\n" . "skein: " . $skein_hashrate . "\n" . "groestl: " . $groestl_hashrate . "\n" . "qubit: " . $qubit_hashrate . "\n" . $separator . "\n", FILE_APPEND);
 			}
 		}
 		else
 		{
-			file_put_contents($filename, "ip: " . $ip . "\n" . "sha: " . $sha_input  . "\n" . "scrypt: " . $scrypt_input . "\n" . "skein: " . $skein_input . "\n" . "groestl: " . $groestl_input . "\n" . "qubit: " . $qubit_input . "\n" . $separator . "\n", FILE_APPEND);
+			file_put_contents($filename, "ip: " . $ip . "\n" . "sha: " . $sha_hashrate  . "\n" . "scrypt: " . $scrypt_hashrate . "\n" . "skein: " . $skein_hashrate . "\n" . "groestl: " . $groestl_hashrate . "\n" . "qubit: " . $qubit_hashrate . "\n" . $separator . "\n", FILE_APPEND);
 		}
 		
 		if($_POST["refresh_values"])
