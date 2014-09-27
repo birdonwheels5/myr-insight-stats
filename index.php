@@ -26,6 +26,7 @@
 		// Determine if the user loading the page has been here before.
 		$ip = $_SERVER['REMOTE_ADDR'];
 		$filename = "ip_data.dat";
+		$separator = "qpwoeiruty";
 		$user_position_in_array = search_ip_address($filename, $ip);
 		$is_ip_unique;
 		
