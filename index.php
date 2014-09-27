@@ -36,11 +36,11 @@
 		if($user_position_in_array >= 0)
 		{
 			$is_ip_unique = false;
-			$sha_hashrate = $sha_input = users[$user_position_in_array]->get_sha_hashrate();
-			$scrypt_hashrate = $scrypt_input = users[$user_position_in_array]->get_scrypt_hashrate();
-			$skein_hashrate = $skein_input = users[$user_position_in_array]->get_skein_hashrate();
-			$groestl_hashrate = $groestl_input = users[$user_position_in_array]->get_groestl_hashrate();
-			$qubit_hashrate = $qubit_input = users[$user_position_in_array]->get_qubit_hashrate();
+			$sha_hashrate = $sha_input = $users[$user_position_in_array]->get_sha_hashrate();
+			$scrypt_hashrate = $scrypt_input = $users[$user_position_in_array]->get_scrypt_hashrate();
+			$skein_hashrate = $skein_input = $users[$user_position_in_array]->get_skein_hashrate();
+			$groestl_hashrate = $groestl_input = $users[$user_position_in_array]->get_groestl_hashrate();
+			$qubit_hashrate = $qubit_input = $users[$user_position_in_array]->get_qubit_hashrate();
 		}
 		else
 		{
