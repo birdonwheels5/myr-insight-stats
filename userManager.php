@@ -4,7 +4,7 @@ include "User.php";
 
 function read_users($filename)
 {
-	$debug_mode = true;
+	$debug_mode = false;
 	$separator = "qpwoeiruty";
 
 	$ip_address = "";
