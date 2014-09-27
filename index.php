@@ -29,8 +29,8 @@
 		$user_position_in_array = search_ip_address($filename, $ip);
 		$is_ip_unique;
 		
-		users = array();
-		users = read_users("ip_data.dat");
+		$users = array();
+		$users = read_users("ip_data.dat");
 		
 		
 		if($user_position_in_array >= 0)
