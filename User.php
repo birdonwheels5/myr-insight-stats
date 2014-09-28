@@ -19,7 +19,7 @@ class User
     $this->scrypt_hashrate = $new_scrypt_hashrate;
     $this->skein_hashrate = $new_skein_hashrate;
     $this->groestl_hashrate = $new_groestl_hashrate;
-	$this->qubit_hashrate = $new_qubit_hashrate;
+    $this->qubit_hashrate = $new_qubit_hashrate;
   }
   
   
@@ -50,7 +50,7 @@ class User
   
   function get_qubit_hashrate()
   {
-    return $this->qubit_hash_rate;
+    return $this->qubit_hashrate;
   }
   
   
