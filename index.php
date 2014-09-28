@@ -156,7 +156,7 @@
 				if(is_numeric($_POST["sha"]) == false)
 				{
 					$sha_hashrate = 1;
-					$sha_input = $sha_hashrate;
+					$sha_input = "";
 				}
 				else
 				{
