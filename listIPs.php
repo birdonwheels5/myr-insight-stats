@@ -11,6 +11,6 @@ print "There are " . count_users($filename) . " unique users who clicked submit.
 
 print "They are: \n <br/>";
 
-display_ip_addresses($filename);
+display_ip_addresses($filename, $users);
 
 ?>
