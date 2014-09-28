@@ -153,7 +153,7 @@
 			}
 			else
 			{
-				if(is_string($_POST["sha"]) == false)
+				if(is_numeric($_POST["sha"]) == false)
 				{
 					$sha_hashrate = 1;
 					$sha_input = $sha_hashrate;
@@ -171,7 +171,7 @@
 			}
 			else
 			{
-				if(is_string($_POST["scrypt"]) == false)
+				if(is_numeric($_POST["scrypt"]) == false)
 				{
 					$scrypt_hashrate = 1;
 					$skein_input = "";
@@ -189,7 +189,7 @@
 			}
 			else
 			{
-				if(is_string($_POST["skein"]) == false)
+				if(is_numeric($_POST["skein"]) == false)
 				{
 					$skein_hashrate = 1;
 					$skein_input = "";
@@ -207,7 +207,7 @@
 			}
 			else
 			{
-				if(is_string($_POST["groestl"]) == false)
+				if(is_numeric($_POST["groestl"]) == false)
 				{
 					$groestl_hashrate = 1;
 					$groestl_input = "";
@@ -225,7 +225,7 @@
 			}
 			else
 			{
-				if(is_string($_POST["qubit"]) == false)
+				if(is_numeric($_POST["qubit"]) == false)
 				{
 					$qubit_hashrate = 1;
 					$qubit_input = "";
