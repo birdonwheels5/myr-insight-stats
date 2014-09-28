@@ -107,9 +107,6 @@
 		}
 		
 		
-		$hash_multiplier = 1000000; // Gives you hashrate in hashes/sec for calculations
-		$coins_per_block = 1000; // Current block reward.
-		
 		scrape("http://birdonwheels5.no-ip.org:3000/status", "scrape.html");
 		
 		$diff = array();
@@ -292,7 +289,11 @@
 
 		function calculate_profit($sha_hashrate, $scrypt_hashrate, $skein_hashrate, $groestl_hashrate, $qubit_hashrate)
 		{
-			global $sha_profit, $scrypt_profit, $skein_profit, $groestl_profit, $qubit_profit;
+			global $sha_profit, $scrypt_profit, $skein_profit, $groestl_profit, $qubit_profit, $diff;
+			
+			$hash_multiplier = 1000000; // Gives you hashrate in hashes/sec for calculations
+			$coins_per_block = 1000; // Current block reward.
+		
 					// 		  Units:     Sec	Diff	   ???	   hashrate MH/s
 			$sha_profit = number_format((86400 / (($diff[0] * pow(2, 32)) / (($sha_hashrate * 1000) * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
 			$scrypt_profit = number_format((86400 / (($diff[1] * pow(2, 32)) / ($scrypt_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
