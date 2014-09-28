@@ -109,14 +109,11 @@ function count_users($filename)
 
 // Returns -1 if the ip address supplied cannot be found in the user array.
 // If successful, the number of the user is returned (will always be > 0).
-function search_ip_address($filename, $ip_address)
+function search_ip_address($filename, $array, $ip_address)
 {
 	$separator = "qpwoeiruty";
 	
 	$FAILURE = -1;
-	
-	$users = array();
-	$users = read_users($filename);
 	
 	$user_count = count_users($filename);
 	
@@ -128,14 +125,14 @@ function search_ip_address($filename, $ip_address)
 	{
 		if ($debug_mode == true)
 		{
-			print "User: " . $users[$i]->get_ip_address() . "<br>";
+			print "User: " . $array[$i]->get_ip_address() . "<br>";
 		}
 		
-		if ((strcmp(stristr($users[$i]->get_ip_address(), $ip_address), $users[$i]->get_ip_address()) == 0))
+		if ((strcmp(stristr($array[$i]->get_ip_address(), $ip_address), $array[$i]->get_ip_address()) == 0))
 		{
 			if ($debug_mode == true)
 			{
-				print "<br>IP match!<br>" . $users[$i]->get_ip_address();
+				print "<br>IP match!<br>" . $array[$i]->get_ip_address();
 			}
 			
 			$searchResult = $i;
@@ -148,51 +145,44 @@ function search_ip_address($filename, $ip_address)
 // -----------------------------------------------------------------------------------------
 
 // Display a list of the ip addresss of all the users, formatted in HTML.
-function display_ip_addresses($filename)
+function display_ip_addresses($filename, $array)
 {
-	$users = array();
-	$users = read_users($filename);
 	
 	$user_count = count_users($filename);
 	
 	for($i = 1; $i <= $user_count; $i++)
 	{
-		print $i . ") " . $users[$i]->get_ip_address() . "\n <br/>";
+		print $i . ") " . $array[$i]->get_ip_address() . "\n <br/>";
 	}
 }
 
 // -----------------------------------------------------------------------------------------
 
 // A plain text version of the above function, which displays all info about a given user.
-function display_user_info($filename)
+function display_user_info($filename, $array)
 {
-	$users = array();
-	$users = read_users($filename);
 	
 	$user_count = count_users($filename);
 	
 	for($i = 1; $i <= $user_count; $i++)
 	{
-		print "<b>" . $users[$i]->get_ip_address() . "</b>" . "<br>";
-		print $users[$i]->get_sha_hashrate() . "<br>";
-		print $users[$i]->get_scrypt_hashrate() . "<br>";
-		print $users[$i]->get_skein_hashrate() . "<br>";
-		print $users[$i]->get_groestl_hashrate() . "<br>";
-		print $users[$i]->get_qubit_hashrate() . "<br>";
+		print "<b>" . $array[$i]->get_ip_address() . "</b>" . "<br>";
+		print $array[$i]->get_sha_hashrate() . "<br>";
+		print $array[$i]->get_scrypt_hashrate() . "<br>";
+		print $array[$i]->get_skein_hashrate() . "<br>";
+		print $array[$i]->get_groestl_hashrate() . "<br>";
+		print $array[$i]->get_qubit_hashrate() . "<br>";
 		print "<hr/>";
 	}
 }
 
 // -----------------------------------------------------------------------------------------
 
-function remove_user($filename, $user_number)
+function remove_user($filename, $array, $user_number)
 {
 	$user_number = (int)$user_number;
 	$debug_mode = false;
 	$separator = "qpwoeiruty";
-	
-	$users = array();
-	$users = read_users($filename);
 	
 	$line_number = 0;
 	
@@ -206,7 +196,7 @@ function remove_user($filename, $user_number)
 	}
 	
 	// Get the ip_address of the user we're working with
-	$ip_address = $users[$user_number]->get_ip_address();
+	$ip_address = $array[$user_number]->get_ip_address();
 	
 	if ($debug_mode == true)
 	{
