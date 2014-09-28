@@ -37,11 +37,58 @@
 		if($user_position_in_array >= 0)
 		{
 			$is_ip_unique = false;
-			$sha_hashrate = $sha_input = $users[$user_position_in_array]->get_sha_hashrate();
-			$scrypt_hashrate = $scrypt_input = $users[$user_position_in_array]->get_scrypt_hashrate();
-			$skein_hashrate = $skein_input = $users[$user_position_in_array]->get_skein_hashrate();
-			$groestl_hashrate = $groestl_input = $users[$user_position_in_array]->get_groestl_hashrate();
-			$qubit_hashrate = $qubit_input = $users[$user_position_in_array]->get_qubit_hashrate();
+			$sha_hashrate = $users[$user_position_in_array]->get_sha_hashrate();
+			$scrypt_hashrate = $users[$user_position_in_array]->get_scrypt_hashrate();
+			$skein_hashrate = $users[$user_position_in_array]->get_skein_hashrate();
+			$groestl_hashrate = $users[$user_position_in_array]->get_groestl_hashrate();
+			$qubit_hashrate = $users[$user_position_in_array]->get_qubit_hashrate();
+			
+			// -----------------------
+			
+			if($sha_hashrate == 1)
+			{
+				$sha_input = "";
+			}
+			else
+			{
+				$sha_input = $sha_hashrate;
+			}
+			
+			if($scrypt_hashrate == 1)
+			{
+				$scrypt_input = "";
+			}
+			else
+			{
+				$scrypt_input = $scrypt_hashrate;
+			}
+			
+			if($skein_hashrate == 1)
+			{
+				$skein_input = "";
+			}
+			else
+			{
+				$skein_input = $skein_hashrate;
+			}
+			
+			if($groestl_hashrate == 1)
+			{
+				$groestl_input = "";
+			}
+			else
+			{
+				$groestl_input = $groestl_hashrate;
+			}
+			
+			if($qubit_hashrate == 1)
+			{
+				$qubit_input = "";
+			}
+			else
+			{
+				$qubit_input = $qubit_hashrate;
+			}
 		}
 		else
 		{
