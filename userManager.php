@@ -157,14 +157,14 @@ function display_ip_addresses($filename)
 	
 	for($i = 1; $i <= $user_count; $i++)
 	{
-		print $i . ") " . $users[$i]->get_ip_address() . "<br>";
+		print $i . ") " . $users[$i]->get_ip_address() . "\n <br/>";
 	}
 }
 
 // -----------------------------------------------------------------------------------------
 
 // A plain text version of the above function, which displays all info about a given user.
-function displayUserInfo($filename)
+function display_user_info($filename)
 {
 	$users = array();
 	$users = read_users($filename);
