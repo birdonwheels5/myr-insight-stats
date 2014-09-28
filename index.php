@@ -27,11 +27,12 @@
 		$ip = $_SERVER['REMOTE_ADDR'];
 		$filename = "ip_data.dat";
 		$separator = "qpwoeiruty";
-		$user_position_in_array = search_ip_address($filename, $ip);
-		$is_ip_unique;
 		
 		$users = array();
 		$users = read_users("ip_data.dat");
+		
+		$user_position_in_array = search_ip_address($filename, $users, $ip);
+		$is_ip_unique;
 		
 		
 		if($user_position_in_array >= 0)
@@ -117,31 +118,20 @@
 		$sha_diff = number_format($diff[0], 2, '.', ',');
 		$sha_net_hashrate = number_format(($diff[0]/34.92331797)/1000, 2, '.', ',');
 		
-		$sha_profit = number_format((86400 / (($diff[0] * pow(2, 32)) / (($sha_hashrate * 1000) * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
-
-		
 		$scrypt_diff = number_format($diff[1], 2, '.', ',');
 		$scrypt_net_hashrate = number_format($diff[1]/34.92331797, 2, '.', ',');
-		
-		$scrypt_profit = number_format((86400 / (($diff[1] * pow(2, 32)) / ($scrypt_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
-
 		
 		$skein_diff = number_format($diff[2], 2, '.', ',');
 		$skein_net_hashrate = number_format($diff[2]/34.92331797, 2, '.', ',');
 		
-		$skein_profit = number_format((86400 / (($diff[2] * pow(2, 32)) / ($skein_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
-
-		
 		$groestl_diff = number_format($diff[3], 2, '.', ',');
 		$groestl_net_hashrate = number_format($diff[3]/34.92331797, 2, '.', ',');
-		
-		$groestl_profit = number_format((86400 / (($diff[3] * pow(2, 32)) / ($groestl_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
-
 		
 		$qubit_diff = number_format($diff[4], 2, '.', ',');
 		$qubit_net_hashrate = number_format($diff[4]/34.92331797, 2, '.', ',');
 		
-		$qubit_profit = number_format((86400 / (($diff[4] * pow(2, 32)) / ($qubit_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+		
+		calculate_profit($sha_hashrate, $scrypt_hashrate, $skein_hashrate, $groestl_hashrate, $qubit_hashrate);
 		
 		if ($_SERVER["REQUEST_METHOD"] == "POST") 
 		{
@@ -237,19 +227,14 @@
 				}
 			}
 			
-			// 		  Units:     Sec	Diff	   ???	   hashrate MH/s
-		$sha_profit = number_format((86400 / (($diff[0] * pow(2, 32)) / (($sha_hashrate * 1000) * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
-		$scrypt_profit = number_format((86400 / (($diff[1] * pow(2, 32)) / ($scrypt_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
-		$skein_profit = number_format((86400 / (($diff[2] * pow(2, 32)) / ($skein_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
-		$groestl_profit = number_format((86400 / (($diff[3] * pow(2, 32)) / ($groestl_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
-		$qubit_profit = number_format((86400 / (($diff[4] * pow(2, 32)) / ($qubit_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+		calculate_profit($sha_hashrate, $scrypt_hashrate, $skein_hashrate, $groestl_hashrate, $qubit_hashrate);
 		
 		
 		if($is_ip_unique == false)
 		{
 			if($sha_hashrate != $users[$user_position_in_array]->get_sha_hashrate() or $scrypt_hashrate != $users[$user_position_in_array]->get_scrypt_hashrate() or $skein_hashrate != $users[$user_position_in_array]->get_skein_hashrate() or $groestl_hashrate != $users[$user_position_in_array]->get_groestl_hashrate() or $qubit_hashrate != $users[$user_position_in_array]->get_qubit_hashrate())
 			{
-				remove_user($filename, $user_position_in_array);
+				remove_user($filename, $users $user_position_in_array);
 				file_put_contents($filename, "ip: " . $ip . "\n" . "sha: " . $sha_hashrate  . "\n" . "scrypt: " . $scrypt_hashrate . "\n" . "skein: " . $skein_hashrate . "\n" . "groestl: " . $groestl_hashrate . "\n" . "qubit: " . $qubit_hashrate . "\n" . $separator . "\n", FILE_APPEND);
 			}
 		}
@@ -267,31 +252,24 @@
 		$sha_diff = number_format($diff[0], 2, '.', ',');
 		$sha_net_hashrate = number_format(($diff[0]/34.92331797)/1000, 2, '.', ',');
 		
-		$sha_profit = number_format((86400 / (($diff[0] * pow(2, 32)) / (($sha_hashrate * 1000) * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
-
 		
 		$scrypt_diff = number_format($diff[1], 2, '.', ',');
 		$scrypt_net_hashrate = number_format($diff[1]/34.92331797, 2, '.', ',');
 		
-		$scrypt_profit = number_format((86400 / (($diff[1] * pow(2, 32)) / ($scrypt_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
-
 		
 		$skein_diff = number_format($diff[2], 2, '.', ',');
 		$skein_net_hashrate = number_format($diff[2]/34.92331797, 2, '.', ',');
 		
-		$skein_profit = number_format((86400 / (($diff[2] * pow(2, 32)) / ($skein_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
-
 		
 		$groestl_diff = number_format($diff[3], 2, '.', ',');
 		$groestl_net_hashrate = number_format($diff[3]/34.92331797, 2, '.', ',');
 		
-		$groestl_profit = number_format((86400 / (($diff[3] * pow(2, 32)) / ($groestl_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
-
 		
 		$qubit_diff = number_format($diff[4], 2, '.', ',');
 		$qubit_net_hashrate = number_format($diff[4]/34.92331797, 2, '.', ',');
 		
-		$qubit_profit = number_format((86400 / (($diff[4] * pow(2, 32)) / ($qubit_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+		
+		calculate_profit($sha_hashrate, $scrypt_hashrate, $skein_hashrate, $groestl_hashrate, $qubit_hashrate);
 		
 		}
 		
@@ -307,8 +285,20 @@
 			$groestl_input = "";
 			$qubit_hashrate = 1;
 			$qubit_input = "";
+			
+			calculate_profit($sha_hashrate, $scrypt_hashrate, $skein_hashrate, $groestl_hashrate, $qubit_hashrate);
 		}
 }
+
+		function calculate_profit($sha_hashrate, $scrypt_hashrate, $skein_hashrate, $groestl_hashrate, $qubit_hashrate)
+		{
+				// 		  Units:     Sec	Diff	   ???	   hashrate MH/s
+		$sha_profit = number_format((86400 / (($diff[0] * pow(2, 32)) / (($sha_hashrate * 1000) * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+		$scrypt_profit = number_format((86400 / (($diff[1] * pow(2, 32)) / ($scrypt_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+		$skein_profit = number_format((86400 / (($diff[2] * pow(2, 32)) / ($skein_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+		$groestl_profit = number_format((86400 / (($diff[3] * pow(2, 32)) / ($groestl_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+		$qubit_profit = number_format((86400 / (($diff[4] * pow(2, 32)) / ($qubit_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+		}
 	?>
 	
 		<div class="container" style="width:100%;float:left;">
