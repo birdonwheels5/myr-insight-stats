@@ -290,14 +290,14 @@
 		}
 }
 
-		function calculate_profit($sha_hash, $scrypt_hash, $skein_hash, $groestl_hash, $qubit_hash)
+		function calculate_profit($sha_hashrate, $scrypt_hashrate, $skein_hashrate, $groestl_hashrate, $qubit_hashrate)
 		{
-				// 		  Units:     Sec	Diff	   ???	   hashrate MH/s
-		$sha_profit = number_format((86400 / (($diff[0] * pow(2, 32)) / (($sha_hash * 1000) * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
-		$scrypt_profit = number_format((86400 / (($diff[1] * pow(2, 32)) / ($scrypt_hash * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
-		$skein_profit = number_format((86400 / (($diff[2] * pow(2, 32)) / ($skein_hash * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
-		$groestl_profit = number_format((86400 / (($diff[3] * pow(2, 32)) / ($groestl_hash * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
-		$qubit_profit = number_format((86400 / (($diff[4] * pow(2, 32)) / ($qubit_hash * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+					// 		  Units:     Sec	Diff	   ???	   hashrate MH/s
+			global $sha_profit = number_format((86400 / (($diff[0] * pow(2, 32)) / (($sha_hashrate * 1000) * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+			global $scrypt_profit = number_format((86400 / (($diff[1] * pow(2, 32)) / ($scrypt_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+			global $skein_profit = number_format((86400 / (($diff[2] * pow(2, 32)) / ($skein_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+			global $groestl_profit = number_format((86400 / (($diff[3] * pow(2, 32)) / ($groestl_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
+			global $qubit_profit = number_format((86400 / (($diff[4] * pow(2, 32)) / ($qubit_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
 		}
 	?>
 	
