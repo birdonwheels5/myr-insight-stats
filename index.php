@@ -294,6 +294,20 @@
 		$qubit_profit = number_format((86400 / (($diff[4] * pow(2, 32)) / ($qubit_hashrate * $hash_multiplier))) * $coins_per_block, 1, '.', ',');
 		
 		}
+		
+		if($_POST["clear"])
+		{
+			$sha_hashrate = 1;
+			$sha_input = "";
+			$scrypt_hashrate = 1;
+			$scrypt_input = "";
+			$skein_hashrate = 1;
+			$skein_input = "";
+			$groestl_hashrate = 1;
+			$groestl_input = "";
+			$qubit_hashrate = 1;
+			$qubit_input = "";
+		}
 }
 	?>
 	
@@ -365,7 +379,7 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 	    <tr>
 		<th>
 		    Profitability/Day:<br/>Enter your Hashrate<br/>
-		    <input type="submit" name="submit" value="Submit"></th>
+		    <input type="submit" name="submit" value="Submit"><input type="submit" name="clear" value="Clear"></th>
 		<td>
 		    <input type="text" name="sha" value="<?php echo $sha_input;?>" size="4"><br/>
 		    MYR <br/> (GH/s)
