@@ -89,7 +89,7 @@
 				$qubit_input = $qubit_hashrate;
 			}
 		}
-		else
+		else if($user_position_in_array == -1)
 		{
 			$sha_hashrate = 1; // This one gets multiplied by 1000 later so we can use GH/s instead of MH/s
 			$sha_input = "";
