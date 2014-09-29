@@ -328,6 +328,7 @@ For more information, visit <a href="http://myriadplatform.org" target="_blank">
 	<p><h4>Did you know?</h4> You can change the currency that values are displayed in to USD! 
 	Click on MYR in the top right corner of the page, and select USD. (This feature is still in development)
 	<br/>
+	</p>
 
         <p><h3>Algorithm Statistics:</h3> 
         	    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
