@@ -133,7 +133,7 @@
 		{
 			
 			
-			if(is_numeric($_POST["sha"]) == false /*or empty($_POST["sha"])*/)
+			if(is_numeric($_POST["sha"]) == false or empty($_POST["sha"]))
 			{
 				$sha_hashrate = 1;
 				$sha_input = "";
@@ -145,7 +145,7 @@
 			}
 			
 
-			if(is_numeric($_POST["scrypt"]) == false /*or empty($_POST["scrypt"])*/)
+			if(is_numeric($_POST["scrypt"]) == false or empty($_POST["scrypt"]))
 			{
 				$scrypt_hashrate = 1;
 				$skein_input = "";
@@ -157,7 +157,7 @@
 			}
 			
 
-			if(is_numeric($_POST["skein"]) == false /*or empty($_POST["skein"])*/)
+			if(is_numeric($_POST["skein"]) == false or empty($_POST["skein"]))
 			{
 				$skein_hashrate = 1;
 				$skein_input = "";
@@ -169,7 +169,7 @@
 			}
 			
 
-			if(is_numeric($_POST["groestl"]) == false /*or empty($_POST["groestl"])*/)
+			if(is_numeric($_POST["groestl"]) == false or empty($_POST["groestl"]))
 			{
 				$groestl_hashrate = 1;
 				$groestl_input = "";
@@ -181,7 +181,7 @@
 			}
 			
 
-			if(is_numeric($_POST["qubit"]) == false /*or empty($_POST["qubit"])*/)
+			if(is_numeric($_POST["qubit"]) == false or empty($_POST["qubit"]))
 			{
 				$qubit_hashrate = 1;
 				$qubit_input = "";
@@ -197,8 +197,11 @@
 		
 		if($sha_hashrate != $users[$user_position_in_array]->get_sha_hashrate() or $scrypt_hashrate != $users[$user_position_in_array]->get_scrypt_hashrate() or $skein_hashrate != $users[$user_position_in_array]->get_skein_hashrate() or $groestl_hashrate != $users[$user_position_in_array]->get_groestl_hashrate() or $qubit_hashrate != $users[$user_position_in_array]->get_qubit_hashrate())
 		{
-			remove_user($filename, $users, $user_position_in_array);
-			file_put_contents($filename, "ip: " . $ip . "\n" . "sha: " . $sha_hashrate  . "\n" . "scrypt: " . $scrypt_hashrate . "\n" . "skein: " . $skein_hashrate . "\n" . "groestl: " . $groestl_hashrate . "\n" . "qubit: " . $qubit_hashrate . "\n" . $separator . "\n", FILE_APPEND);
+			if(search_ip_address($filename, $users, $ip) >= 0)
+			{
+				remove_user($filename, $users, $user_position_in_array);
+				file_put_contents($filename, "ip: " . $ip . "\n" . "sha: " . $sha_hashrate  . "\n" . "scrypt: " . $scrypt_hashrate . "\n" . "skein: " . $skein_hashrate . "\n" . "groestl: " . $groestl_hashrate . "\n" . "qubit: " . $qubit_hashrate . "\n" . $separator . "\n", FILE_APPEND);
+			}
 		}
 		else
 		{
