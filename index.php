@@ -36,7 +36,6 @@
 		
 		if($user_position_in_array >= 0)
 		{
-			$is_ip_unique = false;
 			$sha_hashrate = $users[$user_position_in_array]->get_sha_hashrate();
 			$scrypt_hashrate = $users[$user_position_in_array]->get_scrypt_hashrate();
 			$skein_hashrate = $users[$user_position_in_array]->get_skein_hashrate();
