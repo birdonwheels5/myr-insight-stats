@@ -201,6 +201,10 @@
 			remove_user($filename, $users, $user_position_in_array);
 			file_put_contents($filename, "ip: " . $ip . "\n" . "sha: " . $sha_hashrate  . "\n" . "scrypt: " . $scrypt_hashrate . "\n" . "skein: " . $skein_hashrate . "\n" . "groestl: " . $groestl_hashrate . "\n" . "qubit: " . $qubit_hashrate . "\n" . $separator . "\n", FILE_APPEND);
 		}
+		else
+		{
+			
+		}
 		
 		if($_POST["refresh_values"])
 		{
