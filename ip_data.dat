@@ -82,3 +82,10 @@ skein: 1
 groestl: 10
 qubit: 1
 qpwoeiruty
+ip: 192.168.1.1
+sha: 4
+scrypt: .377
+skein: 55
+groestl: 12.5
+qubit: 4.1
+qpwoeiruty

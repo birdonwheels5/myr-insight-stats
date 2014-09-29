@@ -7,7 +7,7 @@ $filename = "ip_data.dat";
 $users = array();
 $users = read_users($filename);
 
-print "There are " . count_users($filename) . " unique users who clicked submit. \n <br/>";
+print "There are " . count_users($filename) . " unique users who visited the block explorer. \n <br/>";
 
 print "They are: \n <br/>";
 
