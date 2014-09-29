@@ -159,19 +159,19 @@ function display_ip_addresses($filename, $array)
 // -----------------------------------------------------------------------------------------
 
 // A plain text version of the above function, which displays all info about a given user.
-function display_user_info($filename, $array)
+function display_ip_info($filename, $array)
 {
 	
 	$user_count = count_users($filename);
 	
 	for($i = 1; $i <= $user_count; $i++)
 	{
-		print "<b>" . $array[$i]->get_ip_address() . "</b>" . "<br>";
-		print $array[$i]->get_sha_hashrate() . "<br>";
-		print $array[$i]->get_scrypt_hashrate() . "<br>";
-		print $array[$i]->get_skein_hashrate() . "<br>";
-		print $array[$i]->get_groestl_hashrate() . "<br>";
-		print $array[$i]->get_qubit_hashrate() . "<br>";
+		print "<b> IP: " . $array[$i]->get_ip_address() . "</b>" . "<br>";
+		print "sha: " . $array[$i]->get_sha_hashrate() . "<br>";
+		print "scrypt: " . $array[$i]->get_scrypt_hashrate() . "<br>";
+		print "skein: " . $array[$i]->get_skein_hashrate() . "<br>";
+		print " groestl: " . $array[$i]->get_groestl_hashrate() . "<br>";
+		print "qubit: " . $array[$i]->get_qubit_hashrate() . "<br>";
 		print "<hr/>";
 	}
 }
